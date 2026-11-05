@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stoneferry Trading | Botanical ingredients, tested before they ship</title>
+<meta name="description" content="Stoneferry Trading LLC imports lab-tested, fully documented herbs and seeds for US food manufacturers, blenders and distributors. Fairfax, Virginia.">
+<link rel="canonical" href="https://stoneferrytrading.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stoneferry Trading">
+<meta property="og:description" content="Botanical ingredients, tested before they ship. Lab-tested, fully documented, delivered in USD.">
+<meta property="og:url" content="https://stoneferrytrading.com/">
+<meta property="og:image" content="https://stoneferrytrading.com/og-image.png">
+<meta name="theme-color" content="#121A26">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Stoneferry Trading LLC","url":"https://stoneferrytrading.com/","email":"omar@stoneferrytrading.com","telephone":"+1-703-596-2508","address":{"@type":"PostalAddress","streetAddress":"11166 Fairfax Blvd, Suite 500 #1301","addressLocality":"Fairfax","addressRegion":"VA","postalCode":"22030","addressCountry":"US"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one 1180px measure on a strict grid; full-bleed photo bands; everything left-aligned; data set in mono. */
+:root{
+  --ink:#121A26; --ink-2:#1A2432; --ink-3:#263348;
+  --paper:#F6F4EF; --paper-2:#EDEAE1; --white:#FFFFFF;
+  --saffron:#C18A2D; --saffron-2:#E2AE52;
+  --sage:#7C8C6E;
+  --stone:#6B7280; --stone-2:#9AA0A8;
+  --line:rgba(18,26,38,.14); --line-soft:rgba(18,26,38,.08); --line-dark:rgba(246,244,239,.16);
+  --font-sans:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --measure:1180px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --nav-h:72px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 12px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:70;background:var(--ink)}
+body.scrolled::before{background:var(--paper)}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{margin:0;font-weight:500;letter-spacing:-.02em;line-height:1.1;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:var(--measure);margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--saffron);font-weight:500}
+.lede{font-size:clamp(17px,1.35vw,20px);line-height:1.55;max-width:60ch;color:var(--stone)}
+.dark .lede{color:var(--stone-2)}
+.sec{padding-block:clamp(72px,9vw,128px)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px 64px;align-items:end;margin-bottom:clamp(40px,5vw,64px)}
+.sec-head h2{font-size:clamp(30px,3.6vw,46px);margin-top:14px}
+.sec-head .lede{max-width:48ch}
+:focus-visible{outline:2px solid var(--saffron);outline-offset:3px}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+
+/* progress bar */
+.progress{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);height:2px;background:var(--saffron);transform-origin:0 50%;transform:scaleX(0);z-index:80;pointer-events:none}
+
+/* nav */
+.nav{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:60;color:var(--paper);transition:background .35s var(--ease),color .35s var(--ease),box-shadow .35s var(--ease)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);gap:24px}
+.nav.scrolled{background:rgba(246,244,239,.9);-webkit-backdrop-filter:saturate(1.3) blur(12px);backdrop-filter:saturate(1.3) blur(12px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.brand{display:inline-flex;align-items:center;color:inherit;text-decoration:none}
+.brand svg{height:22px;width:auto}
+.nav-links{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+.nav-links a{color:inherit;text-decoration:none;font-size:14px;font-weight:500;opacity:.82;transition:opacity .2s}
+.nav-links a:hover{opacity:1}
+.nav-right{display:flex;align-items:center;gap:18px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border-radius:4px;font-size:14px;font-weight:500;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:inherit;line-height:1;transition:background .2s,color .2s,border-color .2s,transform .2s var(--ease)}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--saffron);color:var(--ink);border-color:var(--saffron)}
+.btn-primary:hover{background:var(--saffron-2);border-color:var(--saffron-2)}
+.btn-ghost{background:transparent;color:inherit;border-color:currentColor}
+.btn-ghost:hover{background:rgba(246,244,239,.1)}
+.nav.scrolled .btn-ghost:hover{background:rgba(18,26,38,.06)}
+.btn-ink{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-ink:hover{background:var(--ink-3);border-color:var(--ink-3)}
+.btn .arr{transition:transform .25s var(--ease)}
+.btn:hover .arr{transform:translateX(3px)}
+.menu-btn{display:none;background:none;border:1px solid currentColor;color:inherit;border-radius:4px;width:42px;height:38px;cursor:pointer;align-items:center;justify-content:center}
+.menu-btn span{display:block;width:16px;height:2px;background:currentColor;position:relative}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:16px;height:2px;background:currentColor}
+.menu-btn span::before{top:-5px}.menu-btn span::after{top:5px}
+.menu-panel{display:none}
+@media (max-width:860px){
+  .nav-links,.nav-right .btn{display:none}
+  .menu-btn{display:inline-flex}
+  .menu-panel{display:block;position:absolute;left:0;right:0;top:100%;background:var(--paper);color:var(--ink);box-shadow:0 12px 30px rgba(18,26,38,.12);border-top:1px solid var(--line);transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .25s var(--ease),transform .25s var(--ease)}
+  .nav.open .menu-panel{opacity:1;transform:none;pointer-events:auto}
+  .nav.open{background:var(--paper);color:var(--ink)}
+  .menu-panel ul{list-style:none;margin:0;padding:8px 0}
+  .menu-panel a{display:block;padding:14px max(20px,env(safe-area-inset-left,0px));text-decoration:none;font-weight:500;border-bottom:1px solid var(--line-soft)}
+  .menu-panel .btn{margin:14px max(20px,env(safe-area-inset-left,0px)) 18px}
+}
+
+/* hero */
+.hero{position:relative;background:var(--ink);color:var(--paper);overflow:hidden;isolation:isolate;min-height:620px;display:flex;align-items:flex-end}
+.hero-media{position:absolute;left:0;right:0;top:-12%;bottom:-12%;z-index:-2;will-change:transform}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 55%;transform-origin:50% 60%}
+.js .hero-media img{animation:kenburns 28s var(--ease) both}
+@keyframes kenburns{from{transform:scale(1.1)}to{transform:scale(1)}}
+.hero-media.no-img img{display:none}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(100deg,rgba(18,26,38,.93) 0%,rgba(18,26,38,.72) 42%,rgba(18,26,38,.18) 100%),
+  linear-gradient(180deg,rgba(18,26,38,.5) 0%,rgba(18,26,38,0) 35%,rgba(18,26,38,.82) 100%)}
+.hero .wrap{width:100%;padding-block:calc(var(--nav-h) + 96px) 56px}
+.hero h1{font-size:clamp(38px,5.6vw,72px);max-width:24ch;margin-top:22px;font-weight:500}
+.hero h1 .l{display:block;overflow:hidden}
+.hero h1 .l span{display:block}
+.js .hero h1 .l span{transform:translateY(110%);animation:rise .9s var(--ease) forwards}
+.js .hero h1 .l:nth-child(2) span{animation-delay:.12s}
+@keyframes rise{to{transform:none}}
+.hero .lede{color:rgba(246,244,239,.8);margin-top:26px;max-width:58ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.js .fade{opacity:0;animation:fadeup .8s var(--ease) forwards}
+.js .fade-2{animation-delay:.35s}.js .fade-3{animation-delay:.5s}.js .fade-4{animation-delay:.7s}
+@keyframes fadeup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero-meta{display:flex;flex-wrap:wrap;gap:0;margin-top:64px;border-top:1px solid rgba(246,244,239,.22);padding-top:18px}
+.hero-meta div{font-family:var(--font-mono);font-size:12.5px;letter-spacing:.04em;color:rgba(246,244,239,.78);padding-right:28px;margin-right:28px;border-right:1px solid rgba(246,244,239,.22);margin-bottom:8px}
+.hero-meta div:last-child{border-right:0}
+.hero-meta b{color:var(--paper);font-weight:500}
+
+/* trust strip */
+.trust{border-bottom:1px solid var(--line);background:var(--paper)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.trust-item{padding:40px 32px 40px 0;border-left:1px solid var(--line);padding-left:24px;min-width:0}
+.trust-item:first-child{border-left:0;padding-left:0}
+.trust-item h3{font-size:17px;font-weight:600;letter-spacing:-.01em;margin-top:18px}
+.trust-item p{font-size:15px;color:var(--stone);margin-top:8px;line-height:1.55}
+.seed{width:22px;height:22px;border-radius:50%;border:2.5px solid var(--ink);position:relative;display:inline-block}
+.seed::after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:var(--saffron);left:50%;top:50%;transform:translate(-50%,-50%)}
+.dark .seed{border-color:var(--paper)}
+@media (max-width:980px){.trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.trust-item{padding:28px 20px 28px 0;padding-left:20px}.trust-item:nth-child(odd){border-left:0;padding-left:0}}
+@media (max-width:560px){.trust-grid{grid-template-columns:minmax(0,1fr)}.trust-item{border-left:0;padding-left:0;border-top:1px solid var(--line);padding:24px 0}.trust-item:first-child{border-top:0}}
+
+/* products */
+.products{background:var(--paper-2);border-bottom:1px solid var(--line)}
+.prod-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:40px 48px;align-items:start}
+.prod-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:26px 26px 24px;min-width:0;position:relative;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -20px rgba(18,26,38,.35);border-color:rgba(18,26,38,.28)}
+.card::after{content:"";position:absolute;left:26px;right:26px;bottom:0;height:2px;background:var(--saffron);transform:scaleX(0);transform-origin:0 50%;transition:transform .45s var(--ease)}
+.card:hover::after{transform:scaleX(1)}
+.card h3{font-size:21px;font-weight:600;letter-spacing:-.015em}
+.card .latin{font-family:var(--font-mono);font-size:12px;color:var(--stone);margin-top:4px;letter-spacing:.02em}
+.card dl{margin:18px 0 0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px}
+.card dt{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);padding-top:3px}
+.card dd{margin:0}
+.card .note{font-size:14px;color:var(--stone);margin-top:16px;line-height:1.55;border-top:1px solid var(--line-soft);padding-top:14px}
+.card.next{background:transparent;border-style:dashed}
+.card.next:hover{transform:none;box-shadow:none}
+.card.next::after{display:none}
+.card.next p{font-size:15px;color:var(--stone);margin-top:10px;line-height:1.55}
+.prod-side{position:sticky;top:calc(var(--nav-h) + 24px)}
+.media{position:relative;overflow:hidden;border-radius:6px;background:linear-gradient(135deg,var(--ink-2),var(--ink-3))}
+.media img{width:100%;height:100%;object-fit:cover}
+.media.no-img img{display:none}
+.media .plx{will-change:transform;height:100%}
+.media figcaption{position:absolute;left:16px;bottom:14px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:rgba(246,244,239,.9);background:rgba(18,26,38,.55);padding:6px 10px;border-radius:3px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.prod-side .media{aspect-ratio:4/5;max-width:100%}
+.packing{margin-top:22px;border-top:1px solid var(--line);padding-top:18px;font-size:14.5px;color:var(--stone);line-height:1.6}
+.packing b{color:var(--ink);font-weight:600}
+.serve{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.serve span{font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--ink)}
+@media (max-width:980px){.prod-layout{grid-template-columns:minmax(0,1fr)}.prod-side{position:static}.prod-side .media{aspect-ratio:16/9}}
+@media (max-width:620px){.prod-grid{grid-template-columns:minmax(0,1fr)}.sec-head{grid-template-columns:minmax(0,1fr)}}
+
+/* process */
+.proc-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:48px 72px}
+.proc-sticky{position:sticky;top:calc(var(--nav-h) + 32px)}
+.proc-sticky h2{font-size:clamp(30px,3.6vw,46px);margin-top:14px}
+.proc-sticky .lede{margin-top:18px}
+.steps{position:relative;padding-left:56px}
+.steps-track{position:absolute;left:19px;top:8px;bottom:8px;width:1px;background:var(--line)}
+.steps-line{position:absolute;left:19px;top:8px;bottom:8px;width:1px;background:var(--saffron);transform-origin:50% 0;transform:scaleY(0)}
+.step{position:relative;padding:0 0 56px}
+.step:last-child{padding-bottom:0}
+.step .num{position:absolute;left:-56px;top:0;width:40px;height:40px;border-radius:50%;background:var(--paper);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;color:var(--stone);transition:background .4s,color .4s,border-color .4s}
+.step.in .num{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.step h3{font-size:22px;font-weight:600;letter-spacing:-.015em;padding-top:6px}
+.step p{margin-top:12px;color:var(--stone);max-width:56ch}
+.step .tag{display:inline-block;margin-top:14px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--saffron)}
+.proc-media{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:clamp(48px,6vw,80px)}
+.proc-media .media{aspect-ratio:3/2}
+@media (max-width:980px){.proc-layout{grid-template-columns:minmax(0,1fr)}.proc-sticky{position:static}}
+@media (max-width:620px){.proc-media{grid-template-columns:minmax(0,1fr)}.steps{padding-left:52px}}
+
+/* quality (dark) */
+.dark{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+.dark::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(246,244,239,.13) 1px,transparent 1.3px);background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 25%,#000 75%,transparent);mask-image:linear-gradient(180deg,transparent,#000 25%,#000 75%,transparent);pointer-events:none}
+.dark .wrap{position:relative}
+.dark .sec-head h2{color:var(--paper)}
+.q-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px 64px;align-items:start}
+.panel{border:1px solid var(--line-dark);border-radius:6px;overflow:hidden;background:rgba(246,244,239,.03)}
+.panel-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 20px;border-bottom:1px solid var(--line-dark);font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--saffron)}
+.panel-head .cnt{color:var(--stone-2)}
+.trow{display:grid;grid-template-columns:28px minmax(0,1fr);gap:14px;padding:16px 20px;border-bottom:1px solid var(--line-dark);align-items:start}
+.trow:last-child{border-bottom:0}
+.trow .i{font-family:var(--font-mono);font-size:12px;color:var(--stone-2);padding-top:3px}
+.trow b{display:block;font-weight:500;font-size:16px}
+.trow span{display:block;font-size:14px;color:var(--stone-2);margin-top:3px;line-height:1.5}
+.checks{list-style:none;margin:0;padding:0}
+.checks li{display:flex;gap:14px;padding:14px 20px;border-bottom:1px solid var(--line-dark);font-size:15.5px;align-items:center}
+.checks li:last-child{border-bottom:0}
+.checks .ck{flex:none;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--saffron);position:relative}
+.checks .ck::after{content:"";position:absolute;left:5px;top:2px;width:4px;height:8px;border:solid var(--saffron);border-width:0 1.5px 1.5px 0;transform:rotate(45deg)}
+.q-foot{margin-top:22px;font-size:15px;color:var(--stone-2);line-height:1.6;max-width:52ch}
+.q-foot b{color:var(--paper);font-weight:500}
+@media (max-width:980px){.q-layout{grid-template-columns:minmax(0,1fr)}}
+
+/* company */
+.co-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px 72px;align-items:center}
+.co-layout .media{aspect-ratio:4/5}
+.co-text h2{font-size:clamp(30px,3.6vw,46px);margin-top:14px}
+.co-text p{margin-top:18px;color:var(--stone);max-width:56ch}
+.co-text p.strong{color:var(--ink);font-size:clamp(19px,1.6vw,23px);line-height:1.4;font-weight:500;letter-spacing:-.01em}
+.co-facts{margin:28px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 24px}
+.co-facts li{border-top:1px solid var(--line);padding-top:12px;font-size:14.5px}
+.co-facts li small{display:block;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:4px}
+@media (max-width:980px){.co-layout{grid-template-columns:minmax(0,1fr)}.co-layout .media{aspect-ratio:16/10}}
+
+/* contact */
+.contact{background:var(--white);border-top:1px solid var(--line)}
+.ct-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:40px 72px;align-items:start}
+.ct-info h2{font-size:clamp(30px,3.6vw,46px);margin-top:14px}
+.ct-info .lede{margin-top:18px}
+.ct-rows{margin-top:36px;border-top:1px solid var(--line)}
+.ct-row{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid var(--line);align-items:center}
+.ct-row .k{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone)}
+.ct-row .v{font-size:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;min-width:0}
+.ct-row .v a{text-decoration:none}
+.ct-row .v a:hover{text-decoration:underline;text-underline-offset:3px}
+.copy{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);background:transparent;border-radius:3px;padding:5px 9px;cursor:pointer;color:var(--stone)}
+.copy:hover{border-color:var(--ink);color:var(--ink)}
+form{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:28px}
+.f-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.f-full{grid-column:1/-1}
+label{display:block;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:8px}
+.field{width:100%;font:inherit;font-size:15px;padding:12px 13px;border:1px solid var(--line);border-radius:4px;background:var(--white);color:var(--ink)}
+.field:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(193,138,45,.25)}
+textarea.field{min-height:110px;resize:vertical}
+.chk{display:flex;flex-wrap:wrap;gap:8px}
+.chk label{display:inline-flex;align-items:center;gap:8px;margin:0;text-transform:none;letter-spacing:0;font-family:var(--font-sans);font-size:14px;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:7px 12px 7px 10px;background:var(--white);cursor:pointer}
+.chk input{accent-color:var(--saffron);margin:0}
+.f-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-top:22px}
+.f-foot small{color:var(--stone);font-size:13px;max-width:34ch;line-height:1.5}
+.err{color:#9A3B1E;font-size:13.5px;margin-top:10px;display:none}
+.err.show{display:block}
+.composed{display:none;margin-top:22px;border-top:1px solid var(--line);padding-top:22px}
+.composed.show{display:block}
+.composed h4{font-size:16px;font-weight:600}
+.composed p{font-size:14px;color:var(--stone);margin-top:6px;line-height:1.5}
+.composed textarea.field{margin-top:14px;min-height:170px;font-family:var(--font-mono);font-size:12.5px;line-height:1.55}
+.composed .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px;align-items:center}
+.toast{font-family:var(--font-mono);font-size:12px;color:var(--sage);letter-spacing:.04em}
+@media (max-width:980px){.ct-layout{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.f-grid{grid-template-columns:minmax(0,1fr)}form{padding:20px}.ct-row{grid-template-columns:minmax(0,1fr);gap:4px;padding:12px 0}.hero-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}.hero-meta div{border:0;margin:0;padding:0}}
+
+/* footer */
+.foot{background:var(--ink);color:var(--paper);padding-block:56px 40px}
+.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:28px;padding-bottom:36px;border-bottom:1px solid var(--line-dark)}
+.foot .brand svg{height:20px}
+.foot-links{display:flex;flex-wrap:wrap;gap:22px;list-style:none;margin:0;padding:0}
+.foot-links a{text-decoration:none;font-size:14px;color:rgba(246,244,239,.8)}
+.foot-links a:hover{color:var(--paper)}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 28px;padding-top:22px;font-family:var(--font-mono);font-size:12px;color:var(--stone-2);letter-spacing:.02em;line-height:1.6}
+.foot-bottom span{max-width:70ch}
+
+/* reveal on scroll */
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0ms)}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .js .hero-media img{animation:none}
+  .js .hero h1 .l span{transform:none;animation:none}
+  .js .fade{opacity:1;animation:none}
+  .card,.btn{transition:none}
+  .steps-line{transform:scaleY(1)}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="wm" viewBox="0 0 782.5 128.8"><g fill="currentColor"><path d="M31.8359375 73.92578125C48.33984375 73.92578125 59.033203125 65.33203125 59.033203125 52.24609375C59.033203125 41.845703125 52.294921875 35.546875 37.6953125 32.080078125L29.833984375 30.224609375C19.82421875 27.83203125 15.91796875 24.8046875 15.91796875 19.53125C15.91796875 12.939453125 22.119140625 8.30078125 30.908203125 8.30078125C40.087890625 8.30078125 46.044921875 13.427734375 46.58203125 21.77734375H57.080078125C56.640625 7.568359375 46.728515625 -1.171875 31.0546875 -1.171875C15.4296875 -1.171875 5.126953125 7.275390625 5.126953125 20.068359375C5.126953125 30.126953125 11.572265625 36.23046875 26.26953125 39.697265625L34.228515625 41.6015625C44.3359375 43.994140625 48.193359375 47.216796875 48.193359375 52.83203125C48.193359375 59.912109375 41.69921875 64.453125 31.8359375 64.453125C20.947265625 64.453125 14.55078125 58.7890625 14.501953125 49.169921875H3.662109375C3.662109375 64.55078125 14.404296875 73.92578125 31.8359375 73.92578125Z"/><path d="M81.0390625 9.521484375H104.232421875V72.75390625H115.12109375V9.521484375H138.216796875V0.0H81.0390625Z"/><circle cx="193.99" cy="36.38" r="32.13" fill="none" stroke="currentColor" stroke-width="10.84"/><circle cx="193.99" cy="36.38" r="6.72" fill="#C18A2D"/><path d="M254.0546875 72.75390625H264.89453125V33.3984375C264.89453125 30.17578125 264.845703125 23.876953125 264.50390625 15.33203125C269.337890625 23.6328125 273.29296875 30.224609375 275.34375 33.447265625L300.197265625 72.75390625H312.306640625V0.0H301.41796875V43.310546875C301.41796875 45.947265625 301.515625 52.1484375 301.7109375 57.421875C298.78125 52.24609375 295.55859375 46.728515625 293.849609375 43.994140625L266.06640625 0.0H254.0546875Z"/><path d="M341.5390625 72.75390625H390.46484375V63.232421875H352.37890625V40.380859375H387.6328125V30.95703125H352.37890625V9.521484375H390.46484375V0.0H341.5390625Z"/><path d="M416.42578125 72.75390625H427.265625V40.673828125H461.005859375V31.298828125H427.265625V9.521484375H463.7890625V0.0H416.42578125Z"/><path d="M488.7734375 72.75390625H537.69921875V63.232421875H499.61328125V40.380859375H534.8671875V30.95703125H499.61328125V9.521484375H537.69921875V0.0H488.7734375Z"/><path d="M563.66015625 72.75390625H574.5V45.21484375H590.61328125C590.759765625 45.21484375 590.955078125 45.21484375 591.1015625 45.21484375L605.603515625 72.75390625H617.810546875L602.087890625 43.408203125C611.169921875 40.13671875 616.6875 32.8125 616.6875 22.65625C616.6875 8.740234375 606.921875 0.0 591.345703125 0.0H563.66015625ZM574.5 35.986328125V9.375H590.857421875C600.232421875 9.375 605.994140625 14.453125 605.994140625 22.65625C605.994140625 30.859375 600.28125 35.986328125 590.90625 35.986328125Z"/><path d="M643.478515625 72.75390625H654.318359375V45.21484375H670.431640625C670.578125 45.21484375 670.7734375 45.21484375 670.919921875 45.21484375L685.421875 72.75390625H697.62890625L681.90625 43.408203125C690.98828125 40.13671875 696.505859375 32.8125 696.505859375 22.65625C696.505859375 8.740234375 686.740234375 0.0 671.1640625 0.0H643.478515625ZM654.318359375 35.986328125V9.375H670.67578125C680.05078125 9.375 685.8125 14.453125 685.8125 22.65625C685.8125 30.859375 680.099609375 35.986328125 670.724609375 35.986328125Z"/><path d="M744.29296875 72.75390625H755.03515625V43.701171875L781.6953125 0.0H769.244140625L755.572265625 22.94921875C753.521484375 26.3671875 751.6171875 29.736328125 749.712890625 33.10546875C747.80859375 29.736328125 745.85546875 26.3671875 743.8046875 22.94921875L729.986328125 0.0H717.4375L744.29296875 43.701171875Z"/></g><g fill="#C18A2D"><path d="M4.62890625 114.859375H9.6240234375V128.759765625H12.083984375V114.859375H17.0576171875V112.75390625H4.62890625Z"/><path d="M33.436875 128.759765625H35.88609375V122.7119140625H39.15171875C39.1946875 122.7119140625 39.2483984375 122.7119140625 39.2913671875 122.7119140625L42.5355078125 128.759765625H45.317734375L41.794296875 122.29296875C43.7386328125 121.5625 44.716171875 119.9296875 44.716171875 117.78125C44.716171875 114.8271484375 42.8792578125 112.75390625 39.173203125 112.75390625H33.436875ZM35.88609375 120.6171875V114.8486328125H38.89390625C41.2571875 114.8486328125 42.2347265625 115.9765625 42.2347265625 117.78125C42.2347265625 119.5751953125 41.2571875 120.6171875 38.915390625 120.6171875Z"/><path d="M60.1071484375 128.759765625H62.76046875L64.1891796875 124.5380859375H70.4841015625L71.95578125 128.759765625H74.6091015625L68.8083203125 112.75390625H65.8005078125ZM64.887421875 122.4970703125 65.7790234375 119.8544921875C66.176484375 118.6298828125 66.670625 116.96484375 67.293671875 114.6767578125C67.9274609375 116.943359375 68.410859375 118.576171875 68.840546875 119.8544921875L69.764375 122.4970703125Z"/><path d="M95.779375 128.759765625C100.6455859375 128.759765625 103.47078125 125.7412109375 103.47078125 120.7353515625C103.47078125 115.76171875 100.6455859375 112.75390625 95.929765625 112.75390625H90.5694140625V128.759765625ZM93.0186328125 126.611328125V114.90234375H95.7686328125C99.25984375 114.90234375 101.06453125 116.9755859375 101.06453125 120.7353515625C101.06453125 124.52734375 99.25984375 126.611328125 95.6397265625 126.611328125Z"/><path d="M122.5355859375 112.75390625H120.0863671875V128.759765625H122.5355859375Z"/><path d="M139.7205078125 128.759765625H142.201953125V120.2197265625C142.201953125 119.392578125 142.116015625 117.73828125 142.0193359375 115.7294921875C143.1794921875 117.8779296875 143.791796875 118.984375 144.5759765625 120.2412109375L149.979296875 128.759765625H152.815234375V112.75390625H150.3337890625V121.86328125C150.3337890625 122.787109375 150.3767578125 124.2802734375 150.494921875 125.8271484375C149.7859375 124.291015625 149.0662109375 123.0771484375 148.5720703125 122.2822265625L142.545703125 112.75390625H139.7205078125Z"/><path d="M176.72476562499997 128.974609375C180.60269531249997 128.974609375 183.40640624999997 126.439453125 183.40640624999997 122.3896484375V120.552734375H177.08999999999997V122.572265625H181.01089843749997C180.95718749999997 125.12890625 179.27066406249997 126.740234375 176.73550781249997 126.740234375C173.91031249999997 126.740234375 171.86929687499997 124.61328125 171.86929687499997 120.7568359375C171.86929687499997 116.8896484375 173.94253906249997 114.7734375 176.63882812499997 114.7734375C178.74429687499997 114.7734375 180.17300781249997 115.9443359375 180.75308593749997 117.8134765625H183.26675781249997C182.72964843749997 114.6982421875 180.06558593749997 112.5390625 176.61734374999997 112.5390625C172.47085937499997 112.5390625 169.44156249999997 115.654296875 169.44156249999997 120.767578125C169.44156249999997 125.8271484375 172.37417968749997 128.974609375 176.72476562499997 128.974609375Z"/></g></symbol>
+</svg>
+
+<div class="progress" id="progress"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Stoneferry Trading, home"><svg width="160" height="26" role="img" aria-label="Stoneferry Trading"><use href="#wm"/></svg></a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#quality">Quality</a></li>
+        <li><a href="#company">Company</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-ghost" href="#contact">Request samples</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-panel" aria-label="Open menu"><span></span></button>
+    </div>
+    <div class="menu-panel" id="menu-panel">
+      <ul>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#quality">Quality</a></li>
+        <li><a href="#company">Company</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary" href="#contact">Request samples</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero" id="hero">
+  <div class="hero-media" id="hero-media">
+    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&amp;fit=crop&amp;w=1800&amp;q=72" srcset="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&amp;fit=crop&amp;w=1000&amp;q=70 1000w, https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&amp;fit=crop&amp;w=1800&amp;q=72 1800w, https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&amp;fit=crop&amp;w=2600&amp;q=72 2600w" sizes="100vw" alt="Rows of green crops in a field at sunset" fetchpriority="high" onerror="this.parentNode.classList.add('no-img')">
+  </div>
+  <div class="wrap">
+    <div class="eyebrow fade">Botanical ingredients &middot; Sourced at origin</div>
+    <h1><span class="l"><span>Botanical ingredients,</span></span><span class="l"><span>tested before they ship.</span></span></h1>
+    <p class="lede fade fade-2">Stoneferry Trading supplies US food manufacturers, blenders and distributors with lab-tested, fully documented herbs and seeds, sourced directly from the regions that grow them best. Delivered to your dock, priced in dollars.</p>
+    <div class="hero-cta fade fade-3">
+      <a class="btn btn-primary" href="#contact">Request a sample <span class="arr">&rarr;</span></a>
+      <a class="btn btn-ghost" href="#products">See products</a>
+    </div>
+    <div class="hero-meta fade fade-4">
+      <div><b>Fairfax, Virginia</b></div>
+      <div><b>FSVP</b> importer of record</div>
+      <div>Lots from <b>pallets</b> to containers</div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="trust-item reveal" style="--d:0ms">
+        <span class="seed" aria-hidden="true"></span>
+        <h3>Tested before it sails</h3>
+        <p>A sealed pre-shipment sample from every lot is tested at a US laboratory. You see the results before the container leaves origin.</p>
+      </div>
+      <div class="trust-item reveal" style="--d:90ms">
+        <span class="seed" aria-hidden="true"></span>
+        <h3>Documents, complete</h3>
+        <p>Spec sheet, certificate of analysis, FDA prior notice, FSVP records and insurance certificate arrive as one approval packet.</p>
+      </div>
+      <div class="trust-item reveal" style="--d:180ms">
+        <span class="seed" aria-hidden="true"></span>
+        <h3>Delivered, in dollars</h3>
+        <p>Quotes are per pound, delivered to your dock, in USD. Customs, FDA entry and freight stay on our side of the table.</p>
+      </div>
+      <div class="trust-item reveal" style="--d:270ms">
+        <span class="seed" aria-hidden="true"></span>
+        <h3>Right-sized lots</h3>
+        <p>From pallet quantities to full containers, with mixed loads when you need more than one product.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec products" id="products">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="reveal">
+        <div class="eyebrow">Products</div>
+        <h2>Five lines to start.</h2>
+      </div>
+      <p class="lede reveal" style="--d:100ms">Each comes from one of the world's leading origins for that product; our first five are sourced in Egypt. A specification sheet and a certificate of analysis come with every sample and every lot.</p>
+    </div>
+    <div class="prod-layout">
+      <div class="prod-grid">
+        <article class="card reveal" style="--d:0ms">
+          <h3>Thyme</h3>
+          <div class="latin">Thymus vulgaris</div>
+          <dl><dt>Origin</dt><dd>Egypt</dd><dt>Forms</dt><dd>Whole leaf, rubbed, cut</dd><dt>Treatment</dt><dd>Steam sterilization on request</dd></dl>
+          <p class="note">A mainstay of za'atar blends, dry rubs and seasoning mixes. Quoted by cut and sieve size.</p>
+        </article>
+        <article class="card reveal" style="--d:80ms">
+          <h3>Fennel seed</h3>
+          <div class="latin">Foeniculum vulgare</div>
+          <dl><dt>Origin</dt><dd>Egypt</dd><dt>Forms</dt><dd>Whole; ground on request</dd><dt>Treatment</dt><dd>Machine cleaned, purity to spec</dd></dl>
+          <p class="note">Whole seed is the standard for sausage, bakery and tea blends. Quoted by purity grade.</p>
+        </article>
+        <article class="card reveal" style="--d:160ms">
+          <h3>Anise seed</h3>
+          <div class="latin">Pimpinella anisum</div>
+          <dl><dt>Origin</dt><dd>Egypt</dd><dt>Forms</dt><dd>Whole</dd><dt>Treatment</dt><dd>Machine cleaned, purity to spec</dd></dl>
+          <p class="note">Egypt is a traditional origin for aniseed used in baking, confectionery and distilling.</p>
+        </article>
+        <article class="card reveal" style="--d:240ms">
+          <h3>Dill</h3>
+          <div class="latin">Anethum graveolens</div>
+          <dl><dt>Origin</dt><dd>Egypt</dd><dt>Forms</dt><dd>Dill weed (tips), dill seed</dd><dt>Treatment</dt><dd>Steam sterilization on request</dd></dl>
+          <p class="note">Tips for pickling, dips and seasoning blends; seed for pickling spice.</p>
+        </article>
+        <article class="card reveal" style="--d:320ms">
+          <h3>Coriander seed</h3>
+          <div class="latin">Coriandrum sativum</div>
+          <dl><dt>Origin</dt><dd>Egypt</dd><dt>Forms</dt><dd>Whole, split</dd><dt>Treatment</dt><dd>Machine cleaned, purity to spec</dd></dl>
+          <p class="note">For pickling spice, sausage seasoning and grinding. Split seed on request.</p>
+        </article>
+        <article class="card next reveal" style="--d:400ms">
+          <h3>Next</h3>
+          <p>Chamomile, hibiscus, marjoram, basil and caraway are available on request. Tell us what you buy and we will quote it.</p>
+        </article>
+      </div>
+      <aside class="prod-side reveal" style="--d:120ms">
+        <figure class="media">
+          <div class="plx"><img src="https://images.unsplash.com/photo-1502741384106-56538427cde9?auto=format&amp;fit=crop&amp;w=1200&amp;q=70" alt="Dried spices and seeds laid out on a plate" loading="lazy" onerror="this.closest('.media').classList.add('no-img')"></div>
+          <figcaption>Dried herbs &amp; seeds</figcaption>
+        </figure>
+        <p class="packing"><b>Packing.</b> 10&ndash;25 kg multiwall paper bags with food-grade liner, palletized and shrink-wrapped. Conventional product; private labeling of outer bags on request.</p>
+        <div class="serve" aria-label="Who we supply">
+          <span>Spice blenders &amp; repackers</span><span>Food manufacturers</span><span>Tea &amp; botanical brands</span><span>Foodservice distributors</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="proc-layout">
+      <div class="proc-sticky reveal">
+        <div class="eyebrow">Process</div>
+        <h2>From the field to your dock, in four controlled steps.</h2>
+        <p class="lede">Each step produces a document. Together they are the approval packet your quality team receives with every shipment.</p>
+      </div>
+      <div class="steps" id="steps">
+        <div class="steps-track" aria-hidden="true"></div>
+        <div class="steps-line" id="steps-line" aria-hidden="true"></div>
+        <div class="step reveal">
+          <div class="num">01</div>
+          <h3>Source</h3>
+          <p>We work with established processors in each product's leading growing region. For our current lines, that means the Fayoum and Beni Suef herb belt and the seed-growing regions of Upper Egypt. We work in the local language and audit every processing line in person before the first order.</p>
+          <span class="tag">Output: supplier audit &amp; specification</span>
+        </div>
+        <div class="step reveal">
+          <div class="num">02</div>
+          <h3>Test</h3>
+          <p>Before shipment, a sealed sample is drawn from the lot and sent to an accredited US laboratory for microbiology, pesticide residues, heavy metals, moisture and foreign matter. The results go to you. If a lot fails, it does not ship.</p>
+          <span class="tag">Output: certificate of analysis</span>
+        </div>
+        <div class="step reveal">
+          <div class="num">03</div>
+          <h3>Document</h3>
+          <p>Stoneferry is the FSVP importer of record. We file FDA prior notice, hold the verification records, and assemble the packet: spec sheet, COA, prior notice confirmation, FSVP record and certificate of insurance.</p>
+          <span class="tag">Output: approval packet</span>
+        </div>
+        <div class="step reveal">
+          <div class="num">04</div>
+          <h3>Deliver</h3>
+          <p>Sea freight, customs clearance and FDA entry are handled by us. You receive a delivered price per pound in US dollars, a delivery window, and product at your dock.</p>
+          <span class="tag">Output: delivered goods &amp; packing list</span>
+        </div>
+      </div>
+    </div>
+    <div class="proc-media">
+      <figure class="media reveal" style="--d:0ms">
+        <div class="plx"><img src="https://images.unsplash.com/photo-1666987571351-737b29874697?auto=format&amp;fit=crop&amp;w=1200&amp;q=70" alt="Cultivated field in Egypt" loading="lazy" onerror="this.closest('.media').classList.add('no-img')"></div>
+        <figcaption>Growing regions, Egypt</figcaption>
+      </figure>
+      <figure class="media reveal" style="--d:120ms">
+        <div class="plx"><img src="https://images.unsplash.com/photo-1590496793907-4d66e2994b4d?auto=format&amp;fit=crop&amp;w=1200&amp;q=70" alt="Container ship being loaded by cranes at a port at dusk" loading="lazy" onerror="this.closest('.media').classList.add('no-img')"></div>
+        <figcaption>Sea freight to US East Coast ports</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec dark" id="quality">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="reveal">
+        <div class="eyebrow">Quality &amp; compliance</div>
+        <h2>Compliance is the product.</h2>
+      </div>
+      <p class="lede reveal" style="--d:100ms">Dried herbs and spices are among the most scrutinized food imports in the United States. Stoneferry is built around that fact: every lot is released on test results, never on a supplier's word.</p>
+    </div>
+    <div class="q-layout">
+      <div class="panel reveal">
+        <div class="panel-head"><span>Standard release panel</span><span class="cnt">Every lot</span></div>
+        <div class="trow"><span class="i">01</span><div><b>Salmonella spp.</b><span>The leading cause of FDA detentions for dried herbs and spices.</span></div></div>
+        <div class="trow"><span class="i">02</span><div><b>E. coli and total coliforms</b><span>Hygiene indicators for drying and handling.</span></div></div>
+        <div class="trow"><span class="i">03</span><div><b>Total plate count, yeast and mold</b><span>Shelf-life and storage indicators.</span></div></div>
+        <div class="trow"><span class="i">04</span><div><b>Pesticide residues</b><span>Multi-residue screen against US tolerances.</span></div></div>
+        <div class="trow"><span class="i">05</span><div><b>Heavy metals</b><span>Lead, arsenic, cadmium and mercury.</span></div></div>
+        <div class="trow"><span class="i">06</span><div><b>Moisture</b><span>Checked against the product specification.</span></div></div>
+        <div class="trow"><span class="i">07</span><div><b>Foreign and extraneous matter</b><span>Stems, stones, insect fragments and other defects.</span></div></div>
+      </div>
+      <div class="reveal" style="--d:120ms">
+        <div class="panel">
+          <div class="panel-head"><span>Approval packet</span><span class="cnt">Per shipment</span></div>
+          <ul class="checks">
+            <li><span class="ck" aria-hidden="true"></span>Product specification sheet</li>
+            <li><span class="ck" aria-hidden="true"></span>Certificate of analysis from a US laboratory</li>
+            <li><span class="ck" aria-hidden="true"></span>FDA prior notice confirmation</li>
+            <li><span class="ck" aria-hidden="true"></span>FSVP verification record</li>
+            <li><span class="ck" aria-hidden="true"></span>Certificate of insurance</li>
+            <li><span class="ck" aria-hidden="true"></span>Packing list and bill of lading</li>
+          </ul>
+        </div>
+        <p class="q-foot"><b>Compliance footing.</b> Stoneferry Trading LLC acts as the FSVP importer of record under FDA's Food Safety Modernization Act. Suppliers must hold current FDA food facility registration, and prior notice is filed for every shipment before it arrives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="company">
+  <div class="wrap">
+    <div class="co-layout">
+      <figure class="media reveal">
+        <div class="plx"><img src="https://images.unsplash.com/photo-1735330544871-33ee3821f783?auto=format&amp;fit=crop&amp;w=1200&amp;q=70" alt="Countryside in Fayoum, Egypt" loading="lazy" onerror="this.closest('.media').classList.add('no-img')"></div>
+        <figcaption>Fayoum, Egypt</figcaption>
+      </figure>
+      <div class="co-text reveal" style="--d:120ms">
+        <div class="eyebrow">Company</div>
+        <h2>Sourced in person. Released on data.</h2>
+        <p class="strong">Stoneferry Trading LLC is a Virginia company that imports botanical ingredients for the US market, starting with herbs and seeds from Egypt.</p>
+        <p>We work in English and Arabic, audit every processor in person, and release every lot on laboratory results. Measured, documented and verified before anything ships.</p>
+        <ul class="co-facts">
+          <li><small>Entity</small>Stoneferry Trading LLC, Virginia</li>
+          <li><small>Current origin</small>Egypt</li>
+          <li><small>Office</small>Fairfax, Virginia</li>
+          <li><small>Languages</small>English, Arabic</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec contact" id="contact">
+  <div class="wrap">
+    <div class="ct-layout">
+      <div class="ct-info reveal">
+        <div class="eyebrow">Contact</div>
+        <h2>Request a sample or a quote.</h2>
+        <p class="lede">Tell us the product, the form and your rough annual volume. We reply within one business day with a delivered price and a sample timeline.</p>
+        <div class="ct-rows">
+          <div class="ct-row"><span class="k">Email</span><span class="v"><a href="mailto:omar@stoneferrytrading.com" id="email-link">omar@stoneferrytrading.com</a><button class="copy" type="button" data-copy="omar@stoneferrytrading.com">Copy</button></span></div>
+          <div class="ct-row"><span class="k">Phone</span><span class="v"><a href="tel:+17035962508">(703) 596-2508</a></span></div>
+          <div class="ct-row"><span class="k">Address</span><span class="v">Stoneferry Trading LLC<br>11166 Fairfax Blvd, Suite 500 #1301<br>Fairfax, VA 22030, USA</span></div>
+          <div class="ct-row"><span class="k">Hours</span><span class="v">Mon&ndash;Fri, 9:00&ndash;18:00 ET</span></div>
+        </div>
+      </div>
+      <form id="sample-form" class="reveal" style="--d:120ms" novalidate>
+        <div class="f-grid">
+          <div><label for="f-name">Name</label><input class="field" id="f-name" name="name" type="text" autocomplete="name" required></div>
+          <div><label for="f-company">Company</label><input class="field" id="f-company" name="company" type="text" autocomplete="organization" required></div>
+          <div><label for="f-email">Work email</label><input class="field" id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div><label for="f-volume">Estimated annual volume</label>
+            <select class="field" id="f-volume" name="volume">
+              <option value="">Select</option>
+              <option>Under 5 metric tons</option>
+              <option>5 to 20 metric tons</option>
+              <option>20 to 100 metric tons</option>
+              <option>Over 100 metric tons</option>
+            </select>
+          </div>
+          <div class="f-full"><span class="eyebrow" style="display:block;font-size:11.5px;color:var(--stone);margin-bottom:8px">Products of interest</span>
+            <div class="chk" id="f-products">
+              <label><input type="checkbox" name="products" value="Thyme" id="p-thyme">Thyme</label>
+              <label><input type="checkbox" name="products" value="Fennel seed" id="p-fennel">Fennel seed</label>
+              <label><input type="checkbox" name="products" value="Anise seed" id="p-anise">Anise seed</label>
+              <label><input type="checkbox" name="products" value="Dill" id="p-dill">Dill</label>
+              <label><input type="checkbox" name="products" value="Coriander seed" id="p-coriander">Coriander seed</label>
+              <label><input type="checkbox" name="products" value="Other" id="p-other">Other</label>
+            </div>
+          </div>
+          <div class="f-full"><label for="f-msg">Message</label><textarea class="field" id="f-msg" name="message" placeholder="Forms, specs, target price, delivery location, anything else we should know."></textarea></div>
+        </div>
+        <div class="f-foot">
+          <button class="btn btn-ink" type="submit" id="f-submit">Request a quote <span class="arr">&rarr;</span></button>
+          <small>No mailing list. Your details are used only to answer this request.</small>
+        </div>
+        <div class="err" id="f-err" role="alert">Please add your name, company and a valid work email.</div>
+        <div class="composed" id="composed" aria-live="polite">
+          <h4>Your request is ready.</h4>
+          <p>Send it to <b>omar@stoneferrytrading.com</b>: open it in your email app, or copy the text and paste it into a new message.</p>
+          <textarea class="field" id="composed-text" readonly aria-label="Composed request"></textarea>
+          <div class="acts">
+            <a class="btn btn-primary" id="mail-open" href="mailto:omar@stoneferrytrading.com">Open in email app</a>
+            <button class="btn btn-ghost" type="button" id="copy-req" style="color:var(--ink)">Copy request</button>
+            <span class="toast" id="toast" aria-live="polite"></span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="brand" href="#top" aria-label="Stoneferry Trading, back to top"><svg width="150" height="25" role="img" aria-label="Stoneferry Trading"><use href="#wm"/></svg></a>
+      <ul class="foot-links">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#quality">Quality</a></li>
+        <li><a href="#company">Company</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Stoneferry Trading LLC. A Virginia limited liability company. 11166 Fairfax Blvd, Suite 500 #1301, Fairfax, VA 22030.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement, w=window;
+  root.classList.add('js');
+  var reduce=false;
+  try{ reduce=w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+
+  var nav=d.getElementById('nav'), bar=d.getElementById('progress'), hero=d.getElementById('hero'),
+      heroMedia=d.getElementById('hero-media'), steps=d.getElementById('steps'), stepsLine=d.getElementById('steps-line'),
+      plx=[].slice.call(d.querySelectorAll('.media .plx'));
+
+  /* nav menu */
+  var mb=d.getElementById('menu-btn');
+  if(mb){
+    mb.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      mb.setAttribute('aria-expanded',open?'true':'false');
+      mb.setAttribute('aria-label',open?'Close menu':'Open menu');
+    });
+    [].forEach.call(d.querySelectorAll('#menu-panel a'),function(a){a.addEventListener('click',function(){nav.classList.remove('open');mb.setAttribute('aria-expanded','false');});});
+  }
+
+  /* scroll-driven: nav state, progress, parallax, process line */
+  var ticking=false;
+  function clamp(v,a,b){return v<a?a:v>b?b:v}
+  function update(){
+    ticking=false;
+    var y=w.pageYOffset||root.scrollTop||0, vh=w.innerHeight||1;
+    var sc=y>24;
+    nav.classList.toggle('scrolled',sc); d.body.classList.toggle('scrolled',sc);
+    var total=Math.max(1,root.scrollHeight-vh);
+    bar.style.transform='scaleX('+clamp(y/total,0,1).toFixed(4)+')';
+    if(reduce) return;
+    if(heroMedia && hero && y<hero.offsetHeight){ heroMedia.style.transform='translate3d(0,'+(y*0.22).toFixed(1)+'px,0)'; }
+    for(var i=0;i<plx.length;i++){
+      var el=plx[i], r=el.getBoundingClientRect();
+      if(r.bottom<0||r.top>vh) continue;
+      var p=(r.top+r.height/2-vh/2)/vh;
+      el.style.transform='translate3d(0,'+(p*-26).toFixed(1)+'px,0) scale(1.1)';
+    }
+    if(steps && stepsLine){
+      var sr=steps.getBoundingClientRect();
+      var prog=clamp((vh*0.72-sr.top)/sr.height,0,1);
+      stepsLine.style.transform='scaleY('+prog.toFixed(3)+')';
+    }
+  }
+  function onScroll(){ if(!ticking){ ticking=true; (w.requestAnimationFrame||function(f){setTimeout(f,16)})(update); } }
+  w.addEventListener('scroll',onScroll,{passive:true});
+  w.addEventListener('resize',onScroll);
+  update();
+
+  /* reveal on scroll */
+  var items=[].slice.call(d.querySelectorAll('.reveal'));
+  function showAll(){ items.forEach(function(el){ el.classList.add('in'); }); }
+  if(reduce || !('IntersectionObserver' in w)){ showAll(); }
+  else{
+    try{
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+      },{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+      items.forEach(function(el){ io.observe(el); });
+    }catch(e){ showAll(); }
+  }
+
+  /* copy helpers */
+  function copyText(t,done){
+    var ok=function(){ done(true); }, fail=function(){
+      try{ var ta=d.createElement('textarea'); ta.value=t; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.opacity='0'; d.body.appendChild(ta); ta.select(); var r=d.execCommand && d.execCommand('copy'); d.body.removeChild(ta); done(!!r); }catch(e){ done(false); }
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(ok,fail); } else { fail(); }
+  }
+  [].forEach.call(d.querySelectorAll('.copy[data-copy]'),function(b){
+    b.addEventListener('click',function(){
+      var orig=b.textContent;
+      copyText(b.getAttribute('data-copy'),function(ok){ b.textContent=ok?'Copied':'Select & copy'; setTimeout(function(){ b.textContent=orig; },1800); });
+    });
+  });
+
+  /* sample request form */
+  var form=d.getElementById('sample-form');
+  if(form){
+    var err=d.getElementById('f-err'), composed=d.getElementById('composed'), ct=d.getElementById('composed-text'),
+        mail=d.getElementById('mail-open'), toast=d.getElementById('toast');
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var name=d.getElementById('f-name').value.trim(), co=d.getElementById('f-company').value.trim(),
+          em=d.getElementById('f-email').value.trim(), vol=d.getElementById('f-volume').value, msg=d.getElementById('f-msg').value.trim();
+      var prods=[].map.call(d.querySelectorAll('#f-products input:checked'),function(c){return c.value;});
+      var valid=name && co && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);
+      err.classList.toggle('show',!valid);
+      if(!valid){ composed.classList.remove('show'); return; }
+      var lines=['Sample / quote request',
+        'Name: '+name,'Company: '+co,'Email: '+em,
+        'Products: '+(prods.length?prods.join(', '):'(not specified)'),
+        'Estimated annual volume: '+(vol||'(not specified)'),
+        '', msg?msg:'(no message)'];
+      var body=lines.join('\n');
+      ct.value=body;
+      mail.setAttribute('href','mailto:omar@stoneferrytrading.com?subject='+encodeURIComponent('Sample request: '+co)+'&body='+encodeURIComponent(body));
+      composed.classList.add('show'); toast.textContent='';
+      try{ composed.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'}); }catch(e2){}
+    });
+    d.getElementById('copy-req').addEventListener('click',function(){
+      copyText(ct.value,function(ok){ if(!ok){ ct.focus(); ct.select(); } toast.textContent=ok?'Copied to clipboard':'Text selected, press Ctrl/Cmd+C'; setTimeout(function(){ toast.textContent=''; },2600); });
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
