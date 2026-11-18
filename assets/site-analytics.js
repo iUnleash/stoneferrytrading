@@ -16,7 +16,7 @@
    - Honors the browser's Global Privacy Control signal: if it is on, nothing is loaded.
 */
 (function () {
-  var CLARITY_PROJECT_ID = "";
+  var CLARITY_PROJECT_ID = "zfo8k5phyd";
 
   var w = window, d = document;
 
