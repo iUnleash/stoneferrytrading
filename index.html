@@ -251,6 +251,11 @@ textarea.field{min-height:110px;resize:vertical}
 .err.show{display:block}
 .composed{display:none;margin-top:22px;border-top:1px solid var(--line);padding-top:22px}
 .composed.show{display:block}
+.sent{display:none;margin-top:22px;border-top:1px solid var(--line);padding-top:22px}
+.sent.show{display:block}
+.sent h4{font-size:16px;font-weight:600}
+.sent p{font-size:14px;color:var(--stone);margin-top:6px;line-height:1.5}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .composed h4{font-size:16px;font-weight:600}
 .composed p{font-size:14px;color:var(--stone);margin-top:6px;line-height:1.5}
 .composed textarea.field{margin-top:14px;min-height:170px;font-family:var(--font-mono);font-size:12.5px;line-height:1.55}
@@ -587,8 +592,13 @@ textarea.field{min-height:110px;resize:vertical}
           <small>No mailing list. Your details are used only to answer this request.</small>
         </div>
         <div class="err" id="f-err" role="alert">Please add your name, company and a valid work email.</div>
+        <div class="hp" aria-hidden="true"><label for="f-gotcha">Leave this field empty</label><input type="text" id="f-gotcha" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+        <div class="sent" id="f-sent" role="status">
+          <h4>Thank you. Your request is in.</h4>
+          <p>We reply within one business day. If it is urgent, call (703) 996-9726.</p>
+        </div>
         <div class="composed" id="composed" aria-live="polite">
-          <h4>Your request is ready.</h4>
+          <h4>We could not send this automatically.</h4>
           <p>Send it to <b>omar@stoneferrytrading.com</b>: open it in your email app, or copy the text and paste it into a new message.</p>
           <textarea class="field" id="composed-text" readonly aria-label="Composed request"></textarea>
           <div class="acts">
@@ -704,6 +714,7 @@ textarea.field{min-height:110px;resize:vertical}
   });
 
   /* sample request form */
+  var FORM_ENDPOINT='https://formspree.io/f/mwlobwod';   /* Formspree delivers the quote form to the company inbox */
   var form=d.getElementById('sample-form');
   if(form){
     var err=d.getElementById('f-err'), composed=d.getElementById('composed'), ct=d.getElementById('composed-text'),
@@ -724,9 +735,23 @@ textarea.field{min-height:110px;resize:vertical}
       var body=lines.join('\n');
       ct.value=body;
       mail.setAttribute('href','mailto:omar@stoneferrytrading.com?subject='+encodeURIComponent('Sample request: '+co)+'&body='+encodeURIComponent(body));
-      composed.classList.add('show'); toast.textContent='';
       if(w.sfTrack){ w.sfTrack('home_quote_form'); }
-      try{ composed.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'}); }catch(e2){}
+      var btn=d.getElementById('f-submit'), sent=d.getElementById('f-sent');
+      function show(node){ try{ node.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'}); }catch(e2){} }
+      function fallback(){   /* delivery failed: offer the request as an email the visitor can send */
+        btn.disabled=false; sent.classList.remove('show'); composed.classList.add('show'); toast.textContent='';
+        if(w.sfTrack){ w.sfTrack('home_quote_form_fallback'); } show(composed);
+      }
+      composed.classList.remove('show'); sent.classList.remove('show');
+      if(d.getElementById('f-gotcha').value || !w.fetch){ fallback(); return; }
+      btn.disabled=true;
+      w.fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},
+        body:JSON.stringify({name:name,company:co,email:em,products:prods.length?prods.join(', '):'(not specified)',
+          estimated_annual_volume:vol||'(not specified)',message:msg||'(no message)',_subject:'Sample request: '+co})})
+        .then(function(r){ if(!r.ok){ throw new Error('HTTP '+r.status); }
+          btn.disabled=false; form.reset(); sent.classList.add('show');
+          if(w.sfTrack){ w.sfTrack('home_quote_form_sent'); } show(sent); })
+        .catch(fallback);
     });
     d.getElementById('copy-req').addEventListener('click',function(){
       copyText(ct.value,function(ok){ if(!ok){ ct.focus(); ct.select(); } toast.textContent=ok?'Copied to clipboard':'Text selected, press Ctrl/Cmd+C'; setTimeout(function(){ toast.textContent=''; },2600); });
