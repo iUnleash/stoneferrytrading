@@ -488,7 +488,7 @@ td .o-label{font-size:13.5px;font-weight:400}
         <p><b>Source.</b> <span id="mt-source"></span></p>
         <p><b>Landed cost</b> is the customs value of the goods, plus freight and insurance to the first US port (together, the Census CIF value), plus the calculated duty. It does not include customs brokerage, inland freight, laboratory testing or treatment.</p>
         <p><b>Duty paid</b> is the Census calculated duty, an estimate of the duty collected at entry, divided by the customs value. It is an average across all shipments, not the published tariff rate. Confirm the rate for your shipment with a licensed customs broker.</p>
-        <p><b>Comparisons.</b> <span id="mt-compare"></span> Origins with under 2% of the weight are grouped into Other origins. Shares may not add to exactly 100% because of rounding.</p>
+        <p><b>Comparisons.</b> <span id="mt-compare"></span> Origins with under 2% of the weight are grouped into Other origins. Shares may not add to exactly 100% because of rounding. In the full table, per-unit figures are not shown where an origin shipped under one metric ton in the period.</p>
         <p><b>Tariff codes.</b></p>
         <ul id="mt-codes"></ul>
         <p style="margin-top:14px">The raw figures behind this page are in <a href="data.json">data.json</a>.</p>
@@ -626,6 +626,7 @@ td .o-label{font-size:13.5px;font-weight:400}
   var OCOL={EG:'var(--o-eg)',IN:'var(--o-in)',TR:'var(--o-tr)',OTHER:'var(--o-other)'};
   var OTXT={EG:'#121A26',IN:'#FFFFFF',TR:'#121A26',OTHER:'#121A26'};  /* label colour inside each origin block, by contrast */
   var CTXT={product:'#121A26',freight:'#FFFFFF',duty:'#FFFFFF'};
+  var THIN_KG=1000, DASH='\u2013';   /* full table: below this weight an origin's per-unit figures are not shown */
 
   /* ---------- data access: everything is computed from weight, customs value, CIF value and duty ---------- */
   function rec(p,period,o){
@@ -913,7 +914,8 @@ td .o-label{font-size:13.5px;font-weight:400}
       rows.forEach(function(r){
         var m=met(r.rec); if(!m){ return; }
         var tr=el('tr'), c0=el('td'), lab=el('div','o-label'); lab.appendChild(flag(r.key)); lab.appendChild(el('span',null,r.name)); c0.appendChild(lab); tr.appendChild(c0);
-        [tons(m.kg).replace(' t',''), W.kg>0?pct(m.kg/W.kg):'', money(m.value), money(m.freight), money(m.duty), money(m.landed), pct(m.dutyPct)].forEach(function(v){ tr.appendChild(el('td',null,v)); });
+        var thin=m.kg<THIN_KG, t=Math.round(m.kg/1000);   /* under one metric ton: per-unit figures are noise, so they are left out */
+        [t<1?'<1':t.toLocaleString('en-US'), W.kg>0?pct(m.kg/W.kg):'', thin?DASH:money(m.value), thin?DASH:money(m.freight), thin?DASH:money(m.duty), thin?DASH:money(m.landed), thin?DASH:pct(m.dutyPct)].forEach(function(v){ tr.appendChild(el('td',null,v)); });
         tb.appendChild(tr);
       });
     }
