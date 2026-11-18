@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>US Herb &amp; Seed Import Brief | Stoneferry Trading</title>
+<meta name="description" content="What it costs to land thyme, dill, coriander and anise, fennel and caraway seed in the US, by origin. Built from US Census Bureau import data.">
+<link rel="canonical" href="https://stoneferrytrading.com/market-brief/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="US Herb &amp; Seed Import Brief">
+<meta property="og:description" content="Who supplies the US with thyme, dill, coriander and anise, fennel and caraway seed, and what it costs to land. From US Census Bureau import data.">
+<meta property="og:url" content="https://stoneferrytrading.com/market-brief/">
+<meta property="og:image" content="https://stoneferrytrading.com/og-image.png">
+<meta name="theme-color" content="#121A26">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: the site's 1180px measure. Ink header, four product tiles that straddle it, one detail card per selected product, a calculator, then an ink contact band. All figures render from data.json. */
+:root{
+  --ink:#121A26; --ink-2:#1A2432; --ink-3:#263348;
+  --paper:#F6F4EF; --paper-2:#EDEAE1; --white:#FFFFFF;
+  --saffron:#C18A2D; --saffron-2:#E2AE52; --saffron-ink:#8A6417;
+  --stone:#6B7280; --stone-2:#9AA0A8; --stone-ink:#5B6472;
+  --line:rgba(18,26,38,.14); --line-soft:rgba(18,26,38,.08); --line-dark:rgba(246,244,239,.16);
+  --o-eg:#C18A2D; --o-in:#3D6DB3; --o-tr:#2F9D7C; --o-other:#CDC8BD;
+  --c-product:#9FAEC6; --c-freight:#5A6C8A; --c-duty:#1A2432;
+  --up:#9A3B1E; --down:#2F6B4F;
+  --font-sans:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --measure:1180px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --nav-h:72px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 12px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:70;background:var(--ink)}
+body.scrolled::before{background:var(--paper)}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{margin:0;font-weight:500;letter-spacing:-.02em;line-height:1.1;text-wrap:balance}
+p{margin:0}
+button{font-family:inherit}
+[hidden]{display:none!important}
+.wrap{max-width:var(--measure);margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--saffron-ink);font-weight:500}
+.on-ink .eyebrow{color:var(--saffron-2)}
+.eyebrow.with-flag{display:flex;align-items:center;gap:10px}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--saffron);outline-offset:3px}
+
+/* nav (same as the home page) */
+.progress{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);height:2px;background:var(--saffron);transform-origin:0 50%;transform:scaleX(0);z-index:80;pointer-events:none}
+.nav{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:60;color:var(--paper);transition:background .35s var(--ease),color .35s var(--ease),box-shadow .35s var(--ease)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);gap:24px}
+.nav.scrolled{background:rgba(246,244,239,.9);-webkit-backdrop-filter:saturate(1.3) blur(12px);backdrop-filter:saturate(1.3) blur(12px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.brand{display:inline-flex;align-items:center;color:inherit;text-decoration:none}
+.brand svg{height:22px;width:auto}
+.nav-links{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+.nav-links a{color:inherit;text-decoration:none;font-size:14px;font-weight:500;opacity:.82;transition:opacity .2s}
+.nav-links a:hover,.nav-links a[aria-current="page"]{opacity:1}
+.nav-links a[aria-current="page"]{box-shadow:0 2px 0 var(--saffron)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border-radius:4px;font-size:14px;font-weight:500;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:inherit;line-height:1;transition:background .2s,color .2s,border-color .2s,transform .2s var(--ease)}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--saffron);color:var(--ink);border-color:var(--saffron)}
+.btn-primary:hover{background:var(--saffron-2);border-color:var(--saffron-2)}
+.btn-ghost{background:transparent;color:inherit;border-color:currentColor}
+.btn-ghost:hover{background:rgba(246,244,239,.1)}
+.nav.scrolled .btn-ghost:hover{background:rgba(18,26,38,.06)}
+.btn-ink{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-ink:hover{background:var(--ink-3);border-color:var(--ink-3)}
+.btn .arr{transition:transform .25s var(--ease)}
+.btn:hover .arr{transform:translateX(3px)}
+.menu-btn{display:none;background:none;border:1px solid currentColor;color:inherit;border-radius:4px;width:42px;height:38px;cursor:pointer;align-items:center;justify-content:center}
+.menu-btn span{display:block;width:16px;height:2px;background:currentColor;position:relative}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:16px;height:2px;background:currentColor}
+.menu-btn span::before{top:-5px}.menu-btn span::after{top:5px}
+.menu-panel{display:none}
+@media (max-width:920px){
+  .nav-links,.nav-right .btn{display:none}
+  .menu-btn{display:inline-flex}
+  .menu-panel{display:block;position:absolute;left:0;right:0;top:100%;background:var(--paper);color:var(--ink);box-shadow:0 12px 30px rgba(18,26,38,.12);border-top:1px solid var(--line);transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .25s var(--ease),transform .25s var(--ease)}
+  .nav.open .menu-panel{opacity:1;transform:none;pointer-events:auto}
+  .nav.open{background:var(--paper);color:var(--ink)}
+  .menu-panel ul{list-style:none;margin:0;padding:8px 0}
+  .menu-panel a{display:block;padding:14px max(20px,env(safe-area-inset-left,0px));text-decoration:none;font-weight:500;border-bottom:1px solid var(--line-soft)}
+  .menu-panel .btn{margin:14px max(20px,env(safe-area-inset-left,0px)) 18px}
+}
+
+/* header band */
+.b-hero{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+.b-hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(246,244,239,.13) 1px,transparent 1.3px);background-size:26px 26px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);pointer-events:none}
+.b-hero .wrap{position:relative;padding-block:calc(var(--nav-h) + 40px) 116px}
+.b-hero h1{font-size:clamp(32px,4.6vw,56px);margin-top:18px;max-width:20ch}
+.b-hero .lede{font-size:clamp(17px,1.35vw,20px);line-height:1.55;color:rgba(246,244,239,.8);margin-top:18px;max-width:64ch}
+.b-meta{display:flex;flex-wrap:wrap;gap:6px 0;margin-top:22px;font-family:var(--font-mono);font-size:12.5px;letter-spacing:.04em;color:rgba(246,244,239,.78)}
+.b-meta div{padding-right:22px;margin-right:22px;border-right:1px solid rgba(246,244,239,.22)}
+.b-meta div:last-child{border-right:0;margin-right:0;padding-right:0}
+.b-meta b{color:var(--paper);font-weight:500}
+.board-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px 24px;margin-top:34px;padding-top:20px;border-top:1px solid rgba(246,244,239,.22)}
+.board-head p{font-size:15px;color:rgba(246,244,239,.78);margin-top:8px;max-width:92ch}
+.unit{display:inline-flex;border:1px solid rgba(246,244,239,.35);border-radius:4px;overflow:hidden;flex:none}
+.unit button{appearance:none;border:0;background:transparent;color:inherit;font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;padding:8px 12px;cursor:pointer}
+.unit button[aria-pressed="true"]{background:var(--paper);color:var(--ink)}
+.unit.light{border-color:var(--line)}
+.unit.light button{color:var(--stone-ink)}
+.unit.light button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+/* product tiles */
+.board{position:relative;z-index:2;margin-top:-84px}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.tile{appearance:none;text-align:left;font:inherit;color:inherit;background:var(--white);border:1px solid var(--line);border-radius:6px;padding:18px 18px 16px;cursor:pointer;position:relative;display:grid;gap:10px;align-content:start;min-width:0;transition:border-color .2s,box-shadow .3s var(--ease),transform .3s var(--ease)}
+.tile:hover{transform:translateY(-2px);box-shadow:0 16px 34px -20px rgba(18,26,38,.4)}
+.tile[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 16px 34px -20px rgba(18,26,38,.5)}
+.tile::after{content:"";position:absolute;left:18px;right:18px;bottom:0;height:3px;background:var(--saffron);transform:scaleX(0);transform-origin:0 50%;transition:transform .4s var(--ease)}
+.tile[aria-pressed="true"]::after{transform:scaleX(1)}
+.tile-name{font-size:15px;font-weight:600;letter-spacing:-.01em;line-height:1.25}
+.tile-val{font-size:clamp(28px,3vw,38px);font-weight:600;letter-spacing:-.025em;line-height:1}
+.tile-val small{font-size:14px;font-weight:500;color:var(--stone-ink);letter-spacing:0;margin-left:3px}
+.delta{position:relative;display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;white-space:nowrap}
+.delta svg{flex:none}
+.delta.up{color:var(--up)}.delta.down{color:var(--down)}.delta.flat,.delta.plain{color:var(--stone-ink)}
+.delta span{font-weight:400;color:var(--stone-ink)}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.tile-rows{display:grid;gap:7px;border-top:1px solid var(--line-soft);padding-top:11px;font-size:13px;color:var(--stone-ink)}
+.tile-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 8px;align-items:center}
+.tile-row b{color:var(--ink);font-weight:500;font-family:var(--font-mono);font-size:12.5px}
+.meter{grid-column:1/-1;height:6px;border-radius:999px;background:var(--paper-2);overflow:hidden}
+.meter i{display:block;height:100%;background:var(--o-eg);border-radius:999px;transition:width .5s var(--ease)}
+
+/* detail card */
+.detail{padding-top:28px}
+.d-card{background:var(--white);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.d-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:10px 24px;padding:28px 28px 0}
+.d-head h2{font-size:clamp(26px,2.8vw,34px)}
+.d-sub{font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;color:var(--stone-ink);margin-top:8px}
+.d-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:36px 56px;padding:26px 28px 26px}
+.blk{min-width:0}
+.blk-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 16px;margin-bottom:14px}
+.blk-h h3{font-family:var(--font-mono);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--stone-ink);line-height:1.4}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--stone-ink)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:10px;height:10px;border-radius:2px;flex:none;display:inline-block}
+.flag{width:21px;height:14px;border-radius:2px;box-shadow:0 0 0 1px rgba(18,26,38,.18);flex:none;display:block}
+.cost-head{display:flex;justify-content:flex-end;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--stone-ink);line-height:1.4;margin:-4px 0 2px}
+.cost-row{display:grid;grid-template-columns:128px minmax(0,1fr) 60px;gap:12px;align-items:center;padding:7px 0}
+.cost-delta{justify-content:flex-end;justify-self:end;border-radius:3px}
+.o-label{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:500;min-width:0;line-height:1.2}
+.bar-line{display:flex;align-items:center;gap:9px;min-width:0}
+.bar{display:flex;gap:2px;height:22px;min-width:3px;flex:none;transition:width .55s var(--ease)}
+.seg{height:100%;min-width:1px}
+.seg:last-child{border-radius:0 4px 4px 0}
+.seg.product{background:var(--c-product)}.seg.freight{background:var(--c-freight)}.seg.duty{background:var(--c-duty)}
+.seg:hover,.seg:focus-visible,.sb:hover,.sb:focus-visible{filter:brightness(1.12)}
+.bar-val{font-family:var(--font-mono);font-size:13px;font-weight:500;white-space:nowrap}
+.cost-row.avg{border-top:1px solid var(--line-soft);margin-top:7px;padding-top:13px}
+.cost-row.avg .o-label{color:var(--stone-ink);font-weight:400}
+.share-row{display:grid;grid-template-columns:92px minmax(0,1fr);gap:12px;align-items:center;padding:5px 0}
+.share-row .yr{font-family:var(--font-mono);font-size:12px;color:var(--stone-ink)}
+.segbar{display:flex;gap:2px;height:28px;min-width:0}
+.sb{border-radius:4px;min-width:2px;display:flex;align-items:center;padding:0 8px;font-size:12px;font-weight:600;white-space:nowrap;transition:flex-grow .55s var(--ease)}
+.sb.nolabel{padding:0}
+.sb.nolabel span{display:none}
+.share-legend{margin-top:12px}
+.o-label small{display:block;font-size:11.5px;font-weight:400;color:var(--stone-ink);margin-top:1px}
+.tn{padding:0 28px 8px}
+.tn-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 16px;border-top:1px solid var(--line);padding-top:22px;margin-bottom:4px}
+.tn-h h3{display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--stone-ink);line-height:1.4}
+.tn-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.tn-cell{padding:14px 22px 16px 0;margin-right:22px;border-right:1px solid var(--line-soft);min-width:0}
+.tn-cell:last-child{border-right:0;margin-right:0;padding-right:0}
+.tn-cell .k{font-size:13.5px;color:var(--stone-ink);line-height:1.35}
+.tn-cell .v{font-size:26px;font-weight:600;letter-spacing:-.02em;line-height:1.1;margin-top:6px}
+.tn-cell .from{display:flex;flex-wrap:wrap;gap:3px 10px;align-items:center;font-size:13px;color:var(--stone-ink);margin-top:6px}
+.db{position:relative;height:14px;margin-top:13px}
+.db .t{position:absolute;left:0;right:0;top:6.5px;height:1px;background:var(--line)}
+.db .l{position:absolute;top:6px;height:2px;background:var(--stone-2);transition:left .55s var(--ease),width .55s var(--ease)}
+.db .a,.db .b{position:absolute;top:2px;width:10px;height:10px;border-radius:50%;margin-left:-5px;transition:left .55s var(--ease)}
+.db .a{background:var(--white);border:2px solid var(--stone-2)}
+.db .b{background:var(--o-eg);box-shadow:0 0 0 2px var(--white)}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none}
+.dot.a{background:var(--white);border:2px solid var(--stone-2)}
+.dot.b{background:var(--o-eg)}
+.stat-cap{font-size:13px;color:var(--stone-ink);margin-top:4px;padding-bottom:20px;line-height:1.5}
+.forms{margin:4px 28px 28px;border:1px solid var(--line-soft);border-radius:6px;overflow-x:auto}
+.forms table{min-width:520px}
+.d-note{font-size:13.5px;color:var(--stone-ink);line-height:1.55;margin-top:18px;padding-top:14px;border-top:1px solid var(--line-soft)}
+.d-note b{color:var(--ink);font-weight:600}
+
+/* calculator */
+.calc{border-top:1px solid var(--line);background:var(--paper);padding:28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:28px 56px;align-items:start}
+.calc h3{font-size:22px;font-weight:600;letter-spacing:-.015em}
+.calc-sub{font-size:14.5px;color:var(--stone-ink);margin-top:8px;max-width:44ch}
+.fld{margin-top:20px}
+.lab{display:block;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone-ink);margin-bottom:8px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{appearance:none;display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:14px;line-height:1.2;border:1px solid var(--line);background:var(--white);border-radius:999px;padding:7px 13px 7px 9px;cursor:pointer;color:var(--ink)}
+.opt[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.opt.sm{font-family:var(--font-mono);font-size:12px;padding:6px 11px;border-radius:4px}
+.inp-row{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center}
+.inp{display:flex;align-items:center;border:1px solid var(--line);border-radius:4px;background:var(--white);width:190px;max-width:100%}
+.inp input{flex:1;min-width:0;width:100%;border:0;background:transparent;font:inherit;font-size:16px;padding:10px 4px 10px 12px;color:var(--ink);font-variant-numeric:tabular-nums}
+.inp input:focus{outline:none}
+.inp span{font-family:var(--font-mono);font-size:12px;color:var(--stone-ink);padding:0 12px 0 4px;white-space:nowrap}
+.inp:focus-within{border-color:var(--ink);box-shadow:0 0 0 3px rgba(193,138,45,.25)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{appearance:none;font-family:var(--font-mono);font-size:11.5px;border:1px solid var(--line);background:transparent;border-radius:3px;padding:6px 8px;cursor:pointer;color:var(--stone-ink)}
+.chip:hover{border-color:var(--ink);color:var(--ink)}
+.out{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:24px;min-width:0}
+.out-total{font-size:clamp(32px,3.6vw,46px);font-weight:600;letter-spacing:-.025em;line-height:1.05;margin-top:8px}
+.out-per{font-size:14.5px;color:var(--stone-ink);margin-top:6px}
+.out .segbar{margin-top:18px}
+.out-rows{margin-top:12px;display:grid;gap:7px;font-size:14px}
+.out-row{display:grid;grid-template-columns:10px minmax(0,1fr) auto;gap:10px;align-items:center}
+.out-row b{font-family:var(--font-mono);font-size:13px;font-weight:500}
+.out-cmp{margin-top:16px;padding-top:16px;border-top:1px solid var(--line-soft);font-size:14.5px;line-height:1.55}
+.out-cmp b{font-weight:600}
+.out-foot{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;margin-top:20px}
+.fine{font-size:12.5px;color:var(--stone-ink);line-height:1.5}
+.calc .fine{margin-top:14px;max-width:46ch}
+
+/* numbers and method */
+.more{padding-block:44px 0}
+details.acc{border-top:1px solid var(--line)}
+details.acc:last-of-type{border-bottom:1px solid var(--line)}
+details.acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:17px;font-weight:600;letter-spacing:-.01em}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary::after{content:"+";font-family:var(--font-mono);font-size:20px;font-weight:400;color:var(--stone-ink);line-height:1}
+details.acc[open] summary::after{content:"\2212"}
+.acc-body{padding:2px 0 30px}
+.tbl-tools{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-bottom:14px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--white)}
+table{border-collapse:collapse;width:100%;min-width:800px;font-size:13.5px;font-variant-numeric:tabular-nums}
+th,td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--line-soft);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{font-family:var(--font-mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--stone-ink);font-weight:500;border-bottom:1px solid var(--line)}
+tbody tr:last-child td{border-bottom:0}
+tr.grp td{font-weight:600;background:var(--paper)}
+tr.grp td span{font-family:var(--font-mono);font-weight:400;font-size:11.5px;color:var(--stone-ink);margin-left:10px}
+td .o-label{font-size:13.5px;font-weight:400}
+.method p,.method li{font-size:15px;color:var(--stone-ink);max-width:82ch;line-height:1.6}
+.method p+p{margin-top:10px}
+.method ul{margin:10px 0 0;padding-left:20px}
+.method b{color:var(--ink);font-weight:600}
+.method a{color:var(--saffron-ink)}
+
+/* contact band */
+.b-contact{background:var(--ink);color:var(--paper);margin-top:clamp(56px,7vw,96px);position:relative}
+.b-contact .wrap{padding-block:clamp(52px,6vw,76px);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:36px 72px;align-items:center}
+.b-contact h2{font-size:clamp(28px,3.2vw,42px);margin-top:14px;max-width:18ch}
+.b-contact p{font-size:clamp(16px,1.25vw,18px);color:rgba(246,244,239,.78);margin-top:16px;max-width:46ch}
+.b-contact .btn{margin-top:26px}
+.c-rows{border-top:1px solid var(--line-dark)}
+.c-row{display:grid;grid-template-columns:76px minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid var(--line-dark);align-items:center}
+.c-row .k{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone-2)}
+.c-row .v{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:18px;min-width:0;overflow-wrap:anywhere}
+.c-row .v a{text-decoration:none}
+.c-row .v a:hover{text-decoration:underline;text-underline-offset:3px}
+.copy{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line-dark);background:transparent;border-radius:3px;padding:5px 9px;cursor:pointer;color:var(--stone-2)}
+.copy:hover{border-color:var(--paper);color:var(--paper)}
+
+/* footer (same as the home page) */
+.foot{background:var(--ink);color:var(--paper);padding-block:48px 40px;border-top:1px solid var(--line-dark)}
+.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:28px;padding-bottom:36px;border-bottom:1px solid var(--line-dark)}
+.foot .brand svg{height:20px}
+.foot-links{display:flex;flex-wrap:wrap;gap:22px;list-style:none;margin:0;padding:0}
+.foot-links a{text-decoration:none;font-size:14px;color:rgba(246,244,239,.8)}
+.foot-links a:hover{color:var(--paper)}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 28px;padding-top:22px;font-family:var(--font-mono);font-size:12px;color:var(--stone-2);letter-spacing:.02em;line-height:1.6}
+.foot-bottom span{max-width:70ch}
+
+.tip{position:fixed;z-index:90;pointer-events:none;background:var(--ink);color:var(--paper);font-size:13px;line-height:1.4;padding:7px 10px;border-radius:4px;white-space:nowrap;transform:translate(-50%,calc(-100% - 9px));box-shadow:0 6px 18px rgba(18,26,38,.25)}
+.tip b{font-family:var(--font-mono);font-weight:500}
+.load-err{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:24px;font-size:15px}
+
+@media (max-width:1020px){
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tn-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tn-cell:nth-child(2n){border-right:0;margin-right:0;padding-right:0}
+  .tn-cell:nth-child(n+3){border-top:1px solid var(--line-soft)}
+  .tn-cell .k{min-height:2.7em}
+  .d-grid,.calc,.b-contact .wrap{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .b-hero .wrap{padding-block:calc(var(--nav-h) + 24px) 104px}
+  .b-meta{display:grid;gap:8px}
+  .b-meta div{border:0;margin:0;padding:0}
+  .tile{padding:14px 14px 13px}
+  .tile-name{font-size:14px;min-height:2.5em}
+  .d-head,.d-grid{padding-left:18px;padding-right:18px}
+  .calc{padding:22px 18px}
+  .forms{margin-left:18px;margin-right:18px}
+  .cost-row{grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;padding:8px 0}
+  .cost-row .bar-line{grid-column:1 / -1;grid-row:2}
+  .cost-row .cost-delta{grid-column:2;grid-row:1}
+  .share-row{grid-template-columns:minmax(0,1fr);gap:5px}
+  .tn{padding-left:18px;padding-right:18px}
+  .tn-cell{padding-right:12px;margin-right:12px}
+  .tn-cell .from{flex-direction:column;align-items:flex-start;gap:3px}
+  .out{padding:18px}
+  .c-row{grid-template-columns:minmax(0,1fr);gap:4px}
+  .c-row .v{font-size:17px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .tile,.btn,.bar,.sb,.meter i{transition:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="wm" viewBox="0 0 782.5 128.8"><g fill="currentColor"><path d="M31.8359375 73.92578125C48.33984375 73.92578125 59.033203125 65.33203125 59.033203125 52.24609375C59.033203125 41.845703125 52.294921875 35.546875 37.6953125 32.080078125L29.833984375 30.224609375C19.82421875 27.83203125 15.91796875 24.8046875 15.91796875 19.53125C15.91796875 12.939453125 22.119140625 8.30078125 30.908203125 8.30078125C40.087890625 8.30078125 46.044921875 13.427734375 46.58203125 21.77734375H57.080078125C56.640625 7.568359375 46.728515625 -1.171875 31.0546875 -1.171875C15.4296875 -1.171875 5.126953125 7.275390625 5.126953125 20.068359375C5.126953125 30.126953125 11.572265625 36.23046875 26.26953125 39.697265625L34.228515625 41.6015625C44.3359375 43.994140625 48.193359375 47.216796875 48.193359375 52.83203125C48.193359375 59.912109375 41.69921875 64.453125 31.8359375 64.453125C20.947265625 64.453125 14.55078125 58.7890625 14.501953125 49.169921875H3.662109375C3.662109375 64.55078125 14.404296875 73.92578125 31.8359375 73.92578125Z"/><path d="M81.0390625 9.521484375H104.232421875V72.75390625H115.12109375V9.521484375H138.216796875V0.0H81.0390625Z"/><circle cx="193.99" cy="36.38" r="32.13" fill="none" stroke="currentColor" stroke-width="10.84"/><circle cx="193.99" cy="36.38" r="6.72" fill="#C18A2D"/><path d="M254.0546875 72.75390625H264.89453125V33.3984375C264.89453125 30.17578125 264.845703125 23.876953125 264.50390625 15.33203125C269.337890625 23.6328125 273.29296875 30.224609375 275.34375 33.447265625L300.197265625 72.75390625H312.306640625V0.0H301.41796875V43.310546875C301.41796875 45.947265625 301.515625 52.1484375 301.7109375 57.421875C298.78125 52.24609375 295.55859375 46.728515625 293.849609375 43.994140625L266.06640625 0.0H254.0546875Z"/><path d="M341.5390625 72.75390625H390.46484375V63.232421875H352.37890625V40.380859375H387.6328125V30.95703125H352.37890625V9.521484375H390.46484375V0.0H341.5390625Z"/><path d="M416.42578125 72.75390625H427.265625V40.673828125H461.005859375V31.298828125H427.265625V9.521484375H463.7890625V0.0H416.42578125Z"/><path d="M488.7734375 72.75390625H537.69921875V63.232421875H499.61328125V40.380859375H534.8671875V30.95703125H499.61328125V9.521484375H537.69921875V0.0H488.7734375Z"/><path d="M563.66015625 72.75390625H574.5V45.21484375H590.61328125C590.759765625 45.21484375 590.955078125 45.21484375 591.1015625 45.21484375L605.603515625 72.75390625H617.810546875L602.087890625 43.408203125C611.169921875 40.13671875 616.6875 32.8125 616.6875 22.65625C616.6875 8.740234375 606.921875 0.0 591.345703125 0.0H563.66015625ZM574.5 35.986328125V9.375H590.857421875C600.232421875 9.375 605.994140625 14.453125 605.994140625 22.65625C605.994140625 30.859375 600.28125 35.986328125 590.90625 35.986328125Z"/><path d="M643.478515625 72.75390625H654.318359375V45.21484375H670.431640625C670.578125 45.21484375 670.7734375 45.21484375 670.919921875 45.21484375L685.421875 72.75390625H697.62890625L681.90625 43.408203125C690.98828125 40.13671875 696.505859375 32.8125 696.505859375 22.65625C696.505859375 8.740234375 686.740234375 0.0 671.1640625 0.0H643.478515625ZM654.318359375 35.986328125V9.375H670.67578125C680.05078125 9.375 685.8125 14.453125 685.8125 22.65625C685.8125 30.859375 680.099609375 35.986328125 670.724609375 35.986328125Z"/><path d="M744.29296875 72.75390625H755.03515625V43.701171875L781.6953125 0.0H769.244140625L755.572265625 22.94921875C753.521484375 26.3671875 751.6171875 29.736328125 749.712890625 33.10546875C747.80859375 29.736328125 745.85546875 26.3671875 743.8046875 22.94921875L729.986328125 0.0H717.4375L744.29296875 43.701171875Z"/></g><g fill="#C18A2D"><path d="M4.62890625 114.859375H9.6240234375V128.759765625H12.083984375V114.859375H17.0576171875V112.75390625H4.62890625Z"/><path d="M33.436875 128.759765625H35.88609375V122.7119140625H39.15171875C39.1946875 122.7119140625 39.2483984375 122.7119140625 39.2913671875 122.7119140625L42.5355078125 128.759765625H45.317734375L41.794296875 122.29296875C43.7386328125 121.5625 44.716171875 119.9296875 44.716171875 117.78125C44.716171875 114.8271484375 42.8792578125 112.75390625 39.173203125 112.75390625H33.436875ZM35.88609375 120.6171875V114.8486328125H38.89390625C41.2571875 114.8486328125 42.2347265625 115.9765625 42.2347265625 117.78125C42.2347265625 119.5751953125 41.2571875 120.6171875 38.915390625 120.6171875Z"/><path d="M60.1071484375 128.759765625H62.76046875L64.1891796875 124.5380859375H70.4841015625L71.95578125 128.759765625H74.6091015625L68.8083203125 112.75390625H65.8005078125ZM64.887421875 122.4970703125 65.7790234375 119.8544921875C66.176484375 118.6298828125 66.670625 116.96484375 67.293671875 114.6767578125C67.9274609375 116.943359375 68.410859375 118.576171875 68.840546875 119.8544921875L69.764375 122.4970703125Z"/><path d="M95.779375 128.759765625C100.6455859375 128.759765625 103.47078125 125.7412109375 103.47078125 120.7353515625C103.47078125 115.76171875 100.6455859375 112.75390625 95.929765625 112.75390625H90.5694140625V128.759765625ZM93.0186328125 126.611328125V114.90234375H95.7686328125C99.25984375 114.90234375 101.06453125 116.9755859375 101.06453125 120.7353515625C101.06453125 124.52734375 99.25984375 126.611328125 95.6397265625 126.611328125Z"/><path d="M122.5355859375 112.75390625H120.0863671875V128.759765625H122.5355859375Z"/><path d="M139.7205078125 128.759765625H142.201953125V120.2197265625C142.201953125 119.392578125 142.116015625 117.73828125 142.0193359375 115.7294921875C143.1794921875 117.8779296875 143.791796875 118.984375 144.5759765625 120.2412109375L149.979296875 128.759765625H152.815234375V112.75390625H150.3337890625V121.86328125C150.3337890625 122.787109375 150.3767578125 124.2802734375 150.494921875 125.8271484375C149.7859375 124.291015625 149.0662109375 123.0771484375 148.5720703125 122.2822265625L142.545703125 112.75390625H139.7205078125Z"/><path d="M176.72476562499997 128.974609375C180.60269531249997 128.974609375 183.40640624999997 126.439453125 183.40640624999997 122.3896484375V120.552734375H177.08999999999997V122.572265625H181.01089843749997C180.95718749999997 125.12890625 179.27066406249997 126.740234375 176.73550781249997 126.740234375C173.91031249999997 126.740234375 171.86929687499997 124.61328125 171.86929687499997 120.7568359375C171.86929687499997 116.8896484375 173.94253906249997 114.7734375 176.63882812499997 114.7734375C178.74429687499997 114.7734375 180.17300781249997 115.9443359375 180.75308593749997 117.8134765625H183.26675781249997C182.72964843749997 114.6982421875 180.06558593749997 112.5390625 176.61734374999997 112.5390625C172.47085937499997 112.5390625 169.44156249999997 115.654296875 169.44156249999997 120.767578125C169.44156249999997 125.8271484375 172.37417968749997 128.974609375 176.72476562499997 128.974609375Z"/></g></symbol>
+  <symbol id="f-EG" viewBox="0 0 24 16"><rect width="24" height="5.4" fill="#CE1126"/><rect y="5.3" width="24" height="5.4" fill="#FFFFFF"/><rect y="10.6" width="24" height="5.4" fill="#000000"/><path d="M10.9 6.4h2.2v2.2c0 .7-.5 1.1-1.1 1.4-.6-.3-1.1-.7-1.1-1.4z" fill="#C09300"/></symbol>
+  <symbol id="f-IN" viewBox="0 0 24 16"><rect width="24" height="5.4" fill="#FF9933"/><rect y="5.3" width="24" height="5.4" fill="#FFFFFF"/><rect y="10.6" width="24" height="5.4" fill="#138808"/><circle cx="12" cy="8" r="1.9" fill="none" stroke="#000080" stroke-width=".7"/><circle cx="12" cy="8" r=".5" fill="#000080"/></symbol>
+  <symbol id="f-TR" viewBox="0 0 24 16"><rect width="24" height="16" fill="#E30A17"/><circle cx="9.2" cy="8" r="4" fill="#FFFFFF"/><circle cx="10.2" cy="8" r="3.2" fill="#E30A17"/><polygon points="12.80,8.00 14.22,7.51 14.25,6.00 15.16,7.20 16.60,6.77 15.74,8.00 16.60,9.23 15.16,8.80 14.25,10.00 14.22,8.49" fill="#FFFFFF"/></symbol>
+  <symbol id="f-GLOBE" viewBox="0 0 24 16"><rect width="24" height="16" fill="#EDEAE1"/><circle cx="12" cy="8" r="5.2" fill="none" stroke="#5B6472" stroke-width="1"/><ellipse cx="12" cy="8" rx="2.3" ry="5.2" fill="none" stroke="#5B6472" stroke-width="1"/><path d="M6.8 8h10.4" stroke="#5B6472" stroke-width="1"/></symbol>
+</svg>
+
+<div class="progress" id="progress"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Stoneferry Trading, home"><svg width="160" height="26" role="img" aria-label="Stoneferry Trading"><use href="#wm"/></svg></a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#process">Process</a></li>
+        <li><a href="/#quality">Quality</a></li>
+        <li><a href="/#company">Company</a></li>
+        <li><a href="/market-brief/" aria-current="page">Market brief</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-ghost" href="/#contact">Request samples</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-panel" aria-label="Open menu"><span></span></button>
+    </div>
+    <div class="menu-panel" id="menu-panel">
+      <ul>
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#process">Process</a></li>
+        <li><a href="/#quality">Quality</a></li>
+        <li><a href="/#company">Company</a></li>
+        <li><a href="/market-brief/">Market brief</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary" href="/#contact">Request samples</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="b-hero on-ink">
+  <div class="wrap">
+    <div class="eyebrow">US import brief</div>
+    <h1>Who supplies the US. What it costs to land.</h1>
+    <p class="lede">Official US import data for thyme, dill, coriander and anise, fennel &amp; caraway seed.</p>
+    <div class="b-meta">
+      <div>Source: <b>US Census Bureau</b></div>
+      <div>Data through <b id="m-through">&nbsp;</b></div>
+      <div>Updated <b id="m-updated">&nbsp;</b></div>
+    </div>
+    <div class="board-head">
+      <div>
+        <div class="eyebrow with-flag" id="board-title">Landed at a US port</div>
+        <p id="board-cap">Product, freight, insurance and duty. Select a product for the detail.</p>
+      </div>
+      <div class="unit" role="group" aria-label="Price unit">
+        <button type="button" data-unit="lb" aria-pressed="true">$ / lb</button>
+        <button type="button" data-unit="kg" aria-pressed="false">$ / kg</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="board" aria-label="Products">
+  <div class="wrap">
+    <div class="tiles" id="tiles"></div>
+    <noscript><p class="load-err">This brief needs JavaScript to draw its charts. The underlying figures are in <a href="data.json">data.json</a>.</p></noscript>
+  </div>
+</section>
+
+<section class="detail" id="detail" aria-live="polite">
+  <div class="wrap">
+    <div class="d-card" id="d-card" hidden>
+      <div class="d-head">
+        <div>
+          <h2 id="d-name">&nbsp;</h2>
+          <div class="d-sub" id="d-sub">&nbsp;</div>
+        </div>
+      </div>
+      <div class="d-grid">
+        <div class="blk">
+          <div class="blk-h">
+            <h3 id="cost-title">Landed cost by origin</h3>
+            <div class="legend" aria-hidden="true">
+              <span><i class="sw" style="background:var(--c-product)"></i>Product</span>
+              <span><i class="sw" style="background:var(--c-freight)"></i>Freight &amp; insurance</span>
+              <span><i class="sw" style="background:var(--c-duty)"></i>Duty</span>
+            </div>
+          </div>
+          <div id="cost"></div>
+        </div>
+        <div class="blk">
+          <div class="blk-h"><h3>Share of US imports, by weight</h3></div>
+          <div id="share"></div>
+          <div class="legend share-legend" id="share-legend"></div>
+          <p class="d-note" id="d-note"></p>
+        </div>
+      </div>
+      <div class="tn">
+        <div class="tn-h">
+          <h3 id="tn-title">Then and now</h3>
+          <div class="legend" aria-hidden="true"><span><i class="dot a"></i><span id="tn-prev">&nbsp;</span></span><span><i class="dot b"></i><span id="tn-ytd">&nbsp;</span></span></div>
+        </div>
+        <div class="tn-grid" id="stats"></div>
+        <p class="stat-cap" id="stat-cap"></p>
+      </div>
+      <div class="forms" id="forms" hidden></div>
+
+      <div class="calc" id="calc" data-clarity-mask="true">
+        <div>
+          <h3>Run your numbers</h3>
+          <p class="calc-sub">Size the average landed cost to your volume, then compare it with what you pay today.</p>
+          <div class="fld">
+            <span class="lab" id="lab-origin">Origin</span>
+            <div class="opts" id="calc-origins" role="group" aria-labelledby="lab-origin"></div>
+          </div>
+          <div class="fld">
+            <label class="lab" for="calc-vol">Volume</label>
+            <div class="inp-row">
+              <div class="inp"><input id="calc-vol" type="text" inputmode="numeric" autocomplete="off" value="20,000"><span id="calc-vol-unit">lb</span></div>
+              <div class="chips" id="calc-chips"></div>
+            </div>
+          </div>
+          <div class="fld">
+            <label class="lab" for="calc-price">What you pay now, delivered (optional)</label>
+            <div class="inp"><input id="calc-price" type="text" inputmode="decimal" autocomplete="off" placeholder="0.00"><span id="calc-price-unit">$ / lb</span></div>
+          </div>
+          <p class="fine">What you type stays in your browser. We do not record it.</p>
+        </div>
+        <div class="out">
+          <div class="lab" id="out-title">Landed at a US port</div>
+          <div class="out-total" id="out-total">&nbsp;</div>
+          <div class="out-per" id="out-per">&nbsp;</div>
+          <div class="segbar" id="out-bar"></div>
+          <div class="out-rows" id="out-rows"></div>
+          <div class="out-cmp" id="out-cmp" hidden></div>
+          <div class="out-foot">
+            <a class="btn btn-ink" id="quote-btn" href="mailto:omar@stoneferrytrading.com">Get a delivered quote <span class="arr">&rarr;</span></a>
+            <span class="fine">Market averages from US import data. Not a quote.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="load-err" id="load-err" hidden>The data for this brief did not load. Please refresh the page, or email omar@stoneferrytrading.com and we will send the figures.</div>
+  </div>
+</section>
+
+<section class="more">
+  <div class="wrap">
+    <details class="acc" id="acc-data">
+      <summary>All the numbers</summary>
+      <div class="acc-body">
+        <div class="tbl-tools">
+          <span class="lab" style="margin:0" id="lab-period">Period</span>
+          <div class="opts" id="tbl-periods" role="group" aria-labelledby="lab-period"></div>
+        </div>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Origin</th><th>Metric tons</th><th>Share</th><th id="th-val">Product</th><th>Freight &amp; ins.</th><th>Duty</th><th>Landed</th><th>Duty paid</th></tr></thead>
+            <tbody id="tbl"></tbody>
+          </table>
+        </div>
+      </div>
+    </details>
+    <details class="acc" id="acc-method">
+      <summary>Method and sources</summary>
+      <div class="acc-body method">
+        <p><b>Source.</b> <span id="mt-source"></span></p>
+        <p><b>Landed cost</b> is the customs value of the goods, plus freight and insurance to the first US port (together, the Census CIF value), plus the calculated duty. It does not include customs brokerage, inland freight, laboratory testing or treatment.</p>
+        <p><b>Duty paid</b> is the Census calculated duty, an estimate of the duty collected at entry, divided by the customs value. It is an average across all shipments, not the published tariff rate. Confirm the rate for your shipment with a licensed customs broker.</p>
+        <p><b>Comparisons.</b> <span id="mt-compare"></span> Origins with under 2% of the weight are grouped into Other origins. Shares may not add to exactly 100% because of rounding.</p>
+        <p><b>Tariff codes.</b></p>
+        <ul id="mt-codes"></ul>
+        <p style="margin-top:14px">The raw figures behind this page are in <a href="data.json">data.json</a>.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="b-contact on-ink" id="talk">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Stoneferry Trading</div>
+      <h2>Buying one of these lines?</h2>
+      <p>Send us your spec and volume. We reply within one business day with a delivered price, per pound, to your dock.</p>
+      <a class="btn btn-primary" href="/#contact" id="cta-form">Request a quote <span class="arr">&rarr;</span></a>
+    </div>
+    <div class="c-rows">
+      <div class="c-row"><span class="k">Call</span><span class="v"><a href="tel:+17039969726" id="cta-phone">(703) 996-9726</a></span></div>
+      <div class="c-row"><span class="k">Email</span><span class="v"><a href="mailto:omar@stoneferrytrading.com" id="cta-email">omar@stoneferrytrading.com</a><button class="copy" type="button" data-copy="omar@stoneferrytrading.com">Copy</button></span></div>
+      <div class="c-row"><span class="k">Hours</span><span class="v" style="font-size:16px">Mon&ndash;Fri, 9:00&ndash;18:00 ET</span></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="brand" href="/" aria-label="Stoneferry Trading, home"><svg width="150" height="25" role="img" aria-label="Stoneferry Trading"><use href="#wm"/></svg></a>
+      <ul class="foot-links">
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#process">Process</a></li>
+        <li><a href="/#quality">Quality</a></li>
+        <li><a href="/#company">Company</a></li>
+        <li><a href="/market-brief/">Market brief</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+      </ul>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Stoneferry Trading LLC. A Virginia limited liability company. 11166 Fairfax Blvd, Suite 500 #1301, Fairfax, VA 22030.</span>
+      <span>Figures are from public US government trade data and are not a price quote.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="tip" id="tip" hidden></div>
+
+<script src="/assets/site-analytics.js" defer></script>
+<script>
+(function(){
+  'use strict';
+  var d=document, w=window, root=d.documentElement;
+  var LB=2.20462262185;                       /* pounds per kilogram */
+  var EMAIL='omar@stoneferrytrading.com';
+  var $=function(id){ return d.getElementById(id); };
+  var track=function(name){ try{ if(w.sfTrack){ w.sfTrack(name); } }catch(e){} };
+
+  /* ---------- nav (same behaviour as the home page) ---------- */
+  var nav=$('nav'), bar=$('progress'), mb=$('menu-btn');
+  if(mb){
+    mb.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      mb.setAttribute('aria-expanded',open?'true':'false');
+      mb.setAttribute('aria-label',open?'Close menu':'Open menu');
+    });
+  }
+  var ticking=false;
+  function onScroll(){
+    if(ticking){ return; }
+    ticking=true;
+    (w.requestAnimationFrame||function(f){ setTimeout(f,16); })(function(){
+      ticking=false;
+      var y=w.pageYOffset||root.scrollTop||0, sc=y>24;
+      nav.classList.toggle('scrolled',sc); d.body.classList.toggle('scrolled',sc);
+      var total=Math.max(1,root.scrollHeight-(w.innerHeight||1));
+      bar.style.transform='scaleX('+Math.min(1,Math.max(0,y/total)).toFixed(4)+')';
+      hideTip();
+    });
+  }
+  w.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  /* ---------- small DOM helpers ---------- */
+  function el(tag,cls,text){ var e=d.createElement(tag); if(cls){ e.className=cls; } if(text!=null){ e.textContent=text; } return e; }
+  function svgUse(id,cls){
+    var NS='http://www.w3.org/2000/svg', s=d.createElementNS(NS,'svg'), u=d.createElementNS(NS,'use');
+    s.setAttribute('class',cls); s.setAttribute('aria-hidden','true'); s.setAttribute('focusable','false');
+    u.setAttribute('href','#'+id); s.appendChild(u); return s;
+  }
+  function flag(key){ return svgUse(d.getElementById('f-'+key)?'f-'+key:'f-GLOBE','flag'); }
+  function arrow(dir){
+    var NS='http://www.w3.org/2000/svg', s=d.createElementNS(NS,'svg'), p=d.createElementNS(NS,'path');
+    s.setAttribute('width','9'); s.setAttribute('height','8'); s.setAttribute('viewBox','0 0 9 8'); s.setAttribute('aria-hidden','true');
+    p.setAttribute('d',dir==='up'?'M4.5 0 9 8H0z':'M4.5 8 0 0h9z'); p.setAttribute('fill','currentColor'); s.appendChild(p); return s;
+  }
+  function clear(node){ while(node.firstChild){ node.removeChild(node.firstChild); } }
+
+  /* ---------- tooltip (enhances; every value is also in the table) ---------- */
+  var tip=$('tip');
+  function showTip(target){
+    var t=target.getAttribute('data-tip'); if(!t){ return; }
+    tip.textContent=t; tip.hidden=false;
+    var r=target.getBoundingClientRect(), half=tip.offsetWidth/2, x=r.left+r.width/2;
+    x=Math.max(half+8,Math.min((w.innerWidth||root.clientWidth)-half-8,x));
+    tip.style.left=x+'px'; tip.style.top=Math.max(tip.offsetHeight+14,r.top)+'px';
+  }
+  function hideTip(){ if(tip){ tip.hidden=true; } }
+  d.addEventListener('pointerover',function(e){ var t=e.target.closest&&e.target.closest('[data-tip]'); if(t){ showTip(t); } });
+  d.addEventListener('pointerout',function(e){ if(e.target.closest&&e.target.closest('[data-tip]')){ hideTip(); } });
+  d.addEventListener('focusin',function(e){ var t=e.target.closest&&e.target.closest('[data-tip]'); if(t){ showTip(t); } });
+  d.addEventListener('focusout',hideTip);
+
+  /* ---------- state ---------- */
+  var DATA=null, FOCUS='EG';
+  var state={product:null, unit:'lb', origin:null, vol:0, price:null, period:'ytd'};
+  try{ var su=w.localStorage.getItem('sf_unit'); if(su==='kg'||su==='lb'){ state.unit=su; } }catch(e){}
+  /* The calculator remembers what was typed and in which unit, so switching lb/kg and back never drifts. */
+  var PRESETS={lb:[5000,20000,40000], kg:[2000,10000,20000]};
+  var volIn={unit:'lb', value:20000}, priceIn=null;
+  function volFor(u){
+    if(!(volIn.value>0)){ return 0; }
+    if(volIn.unit===u){ return volIn.value; }
+    var i=PRESETS[volIn.unit].indexOf(volIn.value);
+    if(i>=0){ return PRESETS[u][i]; }
+    return Math.max(100,Math.round((u==='kg'?volIn.value/LB:volIn.value*LB)/100)*100);
+  }
+  function priceFor(u){
+    if(!priceIn||!(priceIn.value>0)){ return null; }
+    return priceIn.unit===u?priceIn.value:(u==='kg'?priceIn.value*LB:priceIn.value/LB);
+  }
+  state.vol=volFor(state.unit);
+  var COMP=[['value','Product','product'],['freight','Freight & insurance','freight'],['duty','Duty','duty']];
+  var OCOL={EG:'var(--o-eg)',IN:'var(--o-in)',TR:'var(--o-tr)',OTHER:'var(--o-other)'};
+  var OTXT={EG:'#121A26',IN:'#FFFFFF',TR:'#121A26',OTHER:'#121A26'};  /* label colour inside each origin block, by contrast */
+  var CTXT={product:'#121A26',freight:'#FFFFFF',duty:'#FFFFFF'};
+
+  /* ---------- data access: everything is computed from weight, customs value, CIF value and duty ---------- */
+  function rec(p,period,o){
+    var t={kg:0,value:0,cif:0,duty:0};
+    p.lines.forEach(function(l){ var r=l.data[period][o]; if(r){ t.kg+=r.kg; t.value+=r.value; t.cif+=r.cif; t.duty+=r.duty; } });
+    return t;
+  }
+  function minus(a,b){ return {kg:a.kg-b.kg, value:a.value-b.value, cif:a.cif-b.cif, duty:a.duty-b.duty}; }
+  function met(r){
+    if(!r||!(r.kg>0)||!(r.value>0)){ return null; }
+    return {kg:r.kg, value:r.value/r.kg, freight:(r.cif-r.value)/r.kg, duty:r.duty/r.kg, landed:(r.cif+r.duty)/r.kg, dutyPct:r.duty/r.value};
+  }
+  function named(){ return Object.keys(DATA.origins).filter(function(k){ return k!=='WORLD'; }); }
+  function shownOrigins(p){
+    /* the focus origin always; other named origins only above the minimum share of year-to-date weight */
+    var W=rec(p,'ytd','WORLD'), out=[FOCUS];
+    named().forEach(function(o){ if(o!==FOCUS && W.kg>0 && rec(p,'ytd',o).kg/W.kg>=DATA.meta.minShare){ out.push(o); } });
+    return out;
+  }
+  function rowsFor(p,period,keys){
+    var W=rec(p,period,'WORLD'), other=W, list=[];
+    keys.forEach(function(o){ var r=rec(p,period,o); other=minus(other,r); list.push({key:o,name:DATA.origins[o],rec:r}); });
+    list.push({key:'OTHER',name:'Other origins',rec:other});
+    list.push({key:'WORLD',name:DATA.origins.WORLD||'All origins',rec:W});
+    return list;
+  }
+  function product(id){ for(var i=0;i<DATA.products.length;i++){ if(DATA.products[i].id===id){ return DATA.products[i]; } } return null; }
+
+  /* ---------- formatting ---------- */
+  function per(vKg){ return state.unit==='lb'?vKg/LB:vKg; }
+  function money(vKg){ return '$'+per(vKg).toFixed(2); }
+  function pct(x,dp){ return (x*100).toFixed(dp==null?1:dp)+'%'; }
+  function tons(kg){ return Math.round(kg/1000).toLocaleString('en-US')+' t'; }
+  function dollars(x){ return '$'+Math.round(x).toLocaleString('en-US'); }
+  function niceDate(iso){
+    var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(iso||''); if(!m){ return iso||''; }
+    return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+m[2]-1]+' '+(+m[3])+', '+m[1];
+  }
+  function delta(now,then,semantic,suffix){
+    /* semantic 'cost': up is unfavourable for a buyer. Otherwise neutral. */
+    var node=el('span','delta');
+    if(!(then>0)||now==null){ node.className='delta plain'; node.textContent='n/a'; return node; }
+    var r=Math.round((now/then-1)*100);
+    if(r===0){ node.className='delta flat'; node.appendChild(d.createTextNode('Flat')); }
+    else{
+      node.className='delta '+(semantic==='cost'?(r>0?'up':'down'):'plain');
+      node.appendChild(arrow(r>0?'up':'down'));
+      node.appendChild(el('span','sr',r>0?'up ':'down '));   /* the arrow, in words, for screen readers */
+      node.appendChild(d.createTextNode(Math.abs(r)+'%'));
+    }
+    if(suffix){ node.appendChild(el('span',null,suffix)); }
+    return node;
+  }
+  function P(k){ return DATA.meta.periods[k]; }
+  function split100(vals){
+    /* whole-number percentages of a total that always add to 100 (largest remainder) */
+    var sum=vals.reduce(function(s,v){ return s+v; },0);
+    if(!(sum>0)){ return vals.map(function(){ return 0; }); }
+    var raw=vals.map(function(v){ return v/sum*100; }), out=raw.map(Math.floor);
+    var left=100-out.reduce(function(s,v){ return s+v; },0);
+    var order=raw.map(function(v,i){ return [v-Math.floor(v),i]; }).sort(function(a,b){ return b[0]-a[0]||a[1]-b[1]; });
+    for(var k=0;k<left;k++){ out[order[k][1]]++; }
+    return out;
+  }
+
+  /* ---------- tiles ---------- */
+  function renderTiles(){
+    var host=$('tiles'); clear(host);
+    DATA.products.forEach(function(p){
+      var a=met(rec(p,'ytd',FOCUS)), b=met(rec(p,'prev',FOCUS)), W=rec(p,'ytd','WORLD');
+      var t=el('button','tile'); t.type='button'; t.setAttribute('data-product',p.id); t.setAttribute('aria-pressed',state.product===p.id?'true':'false');
+      t.appendChild(el('div','tile-name',p.name));
+      var v=el('div','tile-val',a?money(a.landed):'n/a'); if(a){ v.appendChild(el('small',null,'/'+state.unit)); } t.appendChild(v);
+      t.appendChild(delta(a?a.landed:null,b?b.landed:0,'cost',' vs '+P('prev').label));
+      var rows=el('div','tile-rows');
+      var r1=el('div','tile-row'); r1.appendChild(el('span',null,DATA.origins[FOCUS]+"'s share of US imports"));
+      var sh=(a&&W.kg>0)?a.kg/W.kg:0; r1.appendChild(el('b',null,pct(sh)));
+      var mt=el('div','meter'), fill=el('i'); fill.style.width=(sh*100).toFixed(1)+'%'; mt.appendChild(fill); r1.appendChild(mt); rows.appendChild(r1);
+      var r2=el('div','tile-row'); r2.appendChild(el('span',null,'Duty paid')); r2.appendChild(el('b',null,a?pct(a.dutyPct):'n/a')); rows.appendChild(r2);
+      t.appendChild(rows);
+      t.addEventListener('click',function(){ selectProduct(p.id,true); });
+      host.appendChild(t);
+    });
+  }
+
+  /* ---------- detail: landed cost by origin ---------- */
+  function renderCost(p){
+    var host=$('cost'); clear(host);
+    var keys=shownOrigins(p), prev={};
+    rowsFor(p,'prev',keys).forEach(function(r){ prev[r.key]=met(r.rec); });   /* same origins, prior year, for the change column */
+    var rows=rowsFor(p,'ytd',keys).map(function(r){ r.m=met(r.rec); return r; }).filter(function(r){ return r.m; });
+    var max=0; rows.forEach(function(r){ if(r.m.landed>max){ max=r.m.landed; } });
+    host.appendChild(el('div','cost-head','vs '+P('prev').label));
+    rows.forEach(function(r){
+      var row=el('div','cost-row'+(r.key==='WORLD'?' avg':''));
+      var lab=el('div','o-label'), nm=el('span',null,r.name); lab.appendChild(flag(r.key));
+      if(p.originNotes&&p.originNotes[r.key]){ nm.appendChild(el('small',null,p.originNotes[r.key])); }
+      lab.appendChild(nm); row.appendChild(lab);
+      var line=el('div','bar-line'), barEl=el('div','bar');
+      barEl.style.width='calc((100% - 86px) * '+(r.m.landed/max).toFixed(4)+')';
+      var parts=split100(COMP.map(function(c){ return r.m[c[0]]; }));
+      COMP.forEach(function(c,i){
+        var v=r.m[c[0]]; if(!(v/r.m.landed>=0.006)){ return; }   /* a part near zero draws nothing */
+        var s=el('div','seg '+c[2]); s.style.flex=(v/r.m.landed).toFixed(5)+' 1 0';
+        s.tabIndex=0; s.setAttribute('role','img');
+        var label=r.name+', '+c[1].toLowerCase()+': '+money(v)+'/'+state.unit+' ('+parts[i]+'% of landed cost)';
+        s.setAttribute('data-tip',label); s.setAttribute('aria-label',label);
+        barEl.appendChild(s);
+      });
+      line.appendChild(barEl); line.appendChild(el('span','bar-val',money(r.m.landed)+'/'+state.unit)); row.appendChild(line);
+      var b=prev[r.key], ch=delta(r.m.landed,b?b.landed:0,'cost'); ch.classList.add('cost-delta');
+      if(b){ ch.tabIndex=0; ch.setAttribute('data-tip',r.name+', '+P('prev').label+': '+money(b.landed)+'/'+state.unit+' landed'); }
+      row.appendChild(ch);
+      host.appendChild(row);
+    });
+    $('cost-title').textContent='Landed cost by origin, '+P('ytd').label;
+  }
+
+  /* ---------- detail: share of imports ---------- */
+  function segBlock(key,name,frac,labelText,tipText){
+    var b=el('div','sb'); b.style.flex=Math.max(frac,0.0001).toFixed(5)+' 1 0';
+    b.style.background=OCOL[key]||'var(--o-other)'; b.style.color=OTXT[key]||'#121A26';
+    b.tabIndex=0; b.setAttribute('role','img'); b.setAttribute('data-tip',tipText); b.setAttribute('aria-label',tipText);
+    b.appendChild(el('span',null,labelText)); return b;
+  }
+  function fitLabels(scope){
+    [].forEach.call((scope||d).querySelectorAll('.sb'),function(b){
+      b.classList.remove('nolabel');
+      var s=b.firstChild; if(s&&s.scrollWidth+16>b.clientWidth){ b.classList.add('nolabel'); }
+    });
+  }
+  function renderShare(p){
+    var host=$('share'); clear(host);
+    var keys=shownOrigins(p);
+    ['prev','ytd'].forEach(function(period){
+      var rows=rowsFor(p,period,keys), W=rows[rows.length-1].rec;
+      var row=el('div','share-row'); row.appendChild(el('div','yr',P(period).label));
+      var barEl=el('div','segbar');
+      rows.forEach(function(r){
+        if(r.key==='WORLD'||!(W.kg>0)){ return; }
+        var f=r.rec.kg/W.kg; if(!(f>0)){ return; }
+        barEl.appendChild(segBlock(r.key,r.name,f,pct(f),r.name+', '+P(period).label+': '+pct(f)+' of weight ('+tons(r.rec.kg)+')'));
+      });
+      row.appendChild(barEl); host.appendChild(row);
+    });
+    var lg=$('share-legend'); clear(lg);
+    rowsFor(p,'ytd',keys).forEach(function(r){
+      if(r.key==='WORLD'){ return; }
+      var s=el('span'), sw=el('i','sw'); sw.style.background=OCOL[r.key]||'var(--o-other)';
+      s.appendChild(sw); if(r.key!=='OTHER'){ s.appendChild(flag(r.key)); }
+      s.appendChild(d.createTextNode(r.name+(p.originNotes&&p.originNotes[r.key]?' ('+p.originNotes[r.key]+')':''))); lg.appendChild(s);
+    });
+    fitLabels(host);
+  }
+
+  /* ---------- detail: focus origin, then and now ---------- */
+  function statCell(k,nowText,thenText,nowVal,thenVal,deltaNode){
+    /* one figure, then and now, with a dumbbell showing the size of the move */
+    var c=el('div','tn-cell'); c.appendChild(el('div','k',k)); c.appendChild(el('div','v',nowText));
+    var from=el('div','from'); from.appendChild(el('span',null,thenText+' in '+P('prev').label)); if(deltaNode){ from.appendChild(deltaNode); } c.appendChild(from);
+    var top=Math.max(nowVal,thenVal)*1.12, db=el('div','db'); db.setAttribute('aria-hidden','true');
+    if(top>0){
+      var xa=thenVal/top*100, xb=nowVal/top*100, line=el('i','l'), da=el('i','a'), dbb=el('i','b');
+      line.style.left=Math.min(xa,xb).toFixed(2)+'%'; line.style.width=Math.abs(xb-xa).toFixed(2)+'%';
+      da.style.left=xa.toFixed(2)+'%'; dbb.style.left=xb.toFixed(2)+'%';
+      db.appendChild(el('i','t')); db.appendChild(line); db.appendChild(da); db.appendChild(dbb);
+    }
+    c.appendChild(db); return c;
+  }
+  function deltaPts(now,then){
+    /* change in a percentage, in points. Duty up is unfavourable for a buyer. */
+    var x=Math.round((now-then)*1000)/10, node=el('span','delta');
+    if(x===0){ node.className='delta flat'; node.textContent='Flat'; return node; }
+    node.className='delta '+(x>0?'up':'down'); node.appendChild(arrow(x>0?'up':'down')); node.appendChild(el('span','sr',x>0?'up ':'down ')); node.appendChild(d.createTextNode(Math.abs(x).toFixed(1)+' pts')); return node;
+  }
+  function renderStats(p){
+    var host=$('stats'); clear(host);
+    var a=met(rec(p,'ytd',FOCUS)), b=met(rec(p,'prev',FOCUS)), l=met(rec(p,'latest',FOCUS)), cap=$('stat-cap');
+    var title=$('tn-title'); clear(title); title.appendChild(flag(FOCUS)); title.appendChild(d.createTextNode(DATA.origins[FOCUS]+', then and now'));
+    $('tn-prev').textContent=P('prev').label; $('tn-ytd').textContent=P('ytd').label;
+    if(!a||!b){ cap.textContent=''; return; }
+    host.appendChild(statCell('Product, per '+state.unit,money(a.value),money(b.value),a.value,b.value,delta(a.value,b.value,'cost')));
+    host.appendChild(statCell('Freight & insurance, per '+state.unit,money(a.freight),money(b.freight),a.freight,b.freight,delta(a.freight,b.freight,'cost')));
+    host.appendChild(statCell('Duty paid',pct(a.dutyPct),pct(b.dutyPct),a.dutyPct,b.dutyPct,deltaPts(a.dutyPct,b.dutyPct)));
+    var ma=a.kg/P('ytd').months, mb2=b.kg/P('prev').months;
+    host.appendChild(statCell('Average monthly volume',tons(ma),tons(mb2),ma,mb2,delta(ma,mb2,'plain')));
+    cap.textContent=l?('Latest month, '+P('latest').label+': '+money(l.landed)+'/'+state.unit+' landed, '+pct(l.dutyPct)+' duty, '+tons(l.kg)+'.'):'';
+  }
+
+  /* ---------- detail: split by tariff line (products built from more than one code) ---------- */
+  function renderForms(p){
+    var host=$('forms'); clear(host);
+    if(p.lines.length<2){ host.hidden=true; return; }
+    host.hidden=false;
+    var tb=el('table'), th=el('thead'), tr=el('tr');
+    ['By tariff code, '+DATA.origins[FOCUS],'Share of US imports','Landed, per '+state.unit,'vs '+P('prev').label,'Duty paid'].forEach(function(h){ tr.appendChild(el('th',null,h)); });
+    th.appendChild(tr); tb.appendChild(th);
+    var body=el('tbody');
+    p.lines.forEach(function(l){
+      var one={lines:[l]}, a=met(rec(one,'ytd',FOCUS)), b=met(rec(one,'prev',FOCUS)), W=rec(one,'ytd','WORLD');
+      var r=el('tr'); var c=el('td',null,l.label+' '); var code=el('span','mono',l.hts); code.style.color='var(--stone-ink)'; code.style.fontSize='11.5px'; c.appendChild(code); r.appendChild(c);
+      r.appendChild(el('td',null,a&&W.kg>0?pct(a.kg/W.kg):'n/a'));
+      r.appendChild(el('td',null,a?money(a.landed):'n/a'));
+      var dc=el('td'); dc.appendChild(delta(a?a.landed:null,b?b.landed:0,'cost')); r.appendChild(dc);
+      r.appendChild(el('td',null,a?pct(a.dutyPct):'n/a'));
+      body.appendChild(r);
+    });
+    tb.appendChild(body); host.appendChild(tb);
+  }
+
+  /* ---------- calculator ---------- */
+  function calcOrigins(p){ return rowsFor(p,'ytd',shownOrigins(p)).filter(function(r){ return met(r.rec); }); }
+  function parseNum(s){ var n=parseFloat(String(s).replace(/[^0-9.]/g,'')); return isFinite(n)?n:null; }
+  function renderCalcControls(p){
+    var host=$('calc-origins'); clear(host);
+    var list=calcOrigins(p), ok=list.some(function(r){ return r.key===state.origin; });
+    if(!ok){ state.origin=list.length?list[0].key:null; }
+    list.forEach(function(r){
+      var b=el('button','opt'); b.type='button'; b.setAttribute('aria-pressed',r.key===state.origin?'true':'false');
+      b.appendChild(flag(r.key)); b.appendChild(d.createTextNode(r.name));
+      b.addEventListener('click',function(){ state.origin=r.key; renderCalcControls(p); renderCalc(); track('brief_calc_origin'); });
+      host.appendChild(b);
+    });
+    var chips=$('calc-chips'); clear(chips);
+    PRESETS[state.unit].forEach(function(n){
+      var c=el('button','chip',n.toLocaleString('en-US')); c.type='button';
+      c.addEventListener('click',function(){ volIn={unit:state.unit,value:n}; state.vol=n; $('calc-vol').value=n.toLocaleString('en-US'); renderCalc(); calcUsed(); });
+      chips.appendChild(c);
+    });
+    $('calc-vol-unit').textContent=state.unit;
+    $('calc-price-unit').textContent='$ / '+state.unit;
+  }
+  var calcTracked=false;
+  function calcUsed(){ if(!calcTracked){ calcTracked=true; track('brief_calc_used'); } }
+  function renderCalc(){
+    var p=product(state.product); if(!p){ return; }
+    var row=null; calcOrigins(p).forEach(function(r){ if(r.key===state.origin){ row=r; } });
+    var m=row?met(row.rec):null, vol=state.vol;
+    var total=$('out-total'), perEl=$('out-per'), barEl=$('out-bar'), rowsEl=$('out-rows'), cmp=$('out-cmp');
+    clear(barEl); clear(rowsEl); clear(cmp); cmp.hidden=true;
+    if(!m||!(vol>0)){ total.textContent='$0'; perEl.textContent='Enter a volume to see the cost.'; return; }
+    var kg=state.unit==='lb'?vol/LB:vol;
+    var parts=COMP.map(function(c){ return {name:c[1],cls:c[2],amt:Math.round(m[c[0]]*kg)}; });
+    var sum=parts.reduce(function(s,x){ return s+x.amt; },0);
+    $('out-title').textContent='Landed at a US port: '+vol.toLocaleString('en-US')+' '+state.unit+' of '+p.name.toLowerCase()+', '+(row.key==='OTHER'||row.key==='WORLD'?row.name.toLowerCase():'from '+row.name);
+    total.textContent=dollars(sum);
+    perEl.textContent=money(m.landed)+' per '+state.unit+', '+P('ytd').label+' average';
+    var whole=split100(parts.map(function(x){ return x.amt; }));
+    parts.forEach(function(x,i){
+      var f=sum>0?x.amt/sum:0;
+      if(f>=0.006){
+        var b=el('div','sb'); b.style.flex=f.toFixed(5)+' 1 0'; b.style.background='var(--c-'+x.cls+')'; b.style.color=CTXT[x.cls];
+        var tipText=x.name+': '+dollars(x.amt)+' ('+whole[i]+'%)'; b.tabIndex=0; b.setAttribute('role','img'); b.setAttribute('data-tip',tipText); b.setAttribute('aria-label',tipText);
+        b.appendChild(el('span',null,whole[i]+'%')); barEl.appendChild(b);
+      }
+      var r=el('div','out-row'), sw=el('i','sw'); sw.style.background='var(--c-'+x.cls+')';
+      r.appendChild(sw); r.appendChild(el('span',null,x.name)); r.appendChild(el('b',null,dollars(x.amt)));
+      rowsEl.appendChild(r);
+    });
+    fitLabels(barEl);
+    if(state.price>0){
+      var mine=state.unit==='lb'?state.price*LB:state.price, diff=mine-m.landed, rel=diff/m.landed;
+      cmp.hidden=false;
+      var who=(row.key==='OTHER'||row.key==='WORLD')?('for '+row.name.toLowerCase()):('from '+row.name);
+      if(Math.abs(per(diff))<0.005){
+        cmp.appendChild(d.createTextNode('You pay about the average landed cost '+who+'.'));
+      }else{
+        cmp.appendChild(d.createTextNode('You pay '+money(mine)+'/'+state.unit+'. That is '));
+        cmp.appendChild(el('b',null,'$'+Math.abs(per(diff)).toFixed(2)+'/'+state.unit+' ('+Math.abs(rel*100).toFixed(0)+'%) '+(diff>0?'above':'below')));
+        cmp.appendChild(d.createTextNode(' the average landed cost '+who+'.'+(diff>0?' The gap covers brokerage, testing, treatment, inland freight and your supplier’s margin.':'')));
+      }
+    }
+    var subject='Quote request: '+p.name+', '+vol.toLocaleString('en-US')+' '+state.unit;
+    var body='Product: '+p.name+'\nVolume: '+vol.toLocaleString('en-US')+' '+state.unit+'\nForm and spec: \nDeliver to: \nCompany: \n';
+    $('quote-btn').setAttribute('href','mailto:'+EMAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body));
+  }
+
+  /* ---------- full table ---------- */
+  function renderTable(){
+    var tb=$('tbl'); clear(tb);
+    var per_=state.period, cols=8;
+    function group(title,code,p){
+      var g=el('tr','grp'), c=el('td'); c.colSpan=cols; c.appendChild(d.createTextNode(title)); c.appendChild(el('span',null,code)); g.appendChild(c); tb.appendChild(g);
+      var rows=rowsFor(p,per_,named()), W=rows[rows.length-1].rec;
+      rows.forEach(function(r){
+        var m=met(r.rec); if(!m){ return; }
+        var tr=el('tr'), c0=el('td'), lab=el('div','o-label'); lab.appendChild(flag(r.key)); lab.appendChild(el('span',null,r.name)); c0.appendChild(lab); tr.appendChild(c0);
+        [tons(m.kg).replace(' t',''), W.kg>0?pct(m.kg/W.kg):'', money(m.value), money(m.freight), money(m.duty), money(m.landed), pct(m.dutyPct)].forEach(function(v){ tr.appendChild(el('td',null,v)); });
+        tb.appendChild(tr);
+      });
+    }
+    DATA.products.forEach(function(p){
+      if(p.lines.length>1){ group(p.name+', all codes','HTS '+p.lines.map(function(l){ return l.hts; }).join(' + '),p); }
+      p.lines.forEach(function(l){ group(p.lines.length>1?p.name+': '+l.label:p.name,'HTS '+l.hts,{lines:[l]}); });
+    });
+    $('th-val').textContent='Product';
+    var host=$('tbl-periods'); clear(host);
+    ['ytd','prev','latest'].forEach(function(k){
+      var b=el('button','opt sm',P(k).label); b.type='button'; b.setAttribute('aria-pressed',k===state.period?'true':'false');
+      b.addEventListener('click',function(){ state.period=k; renderTable(); });
+      host.appendChild(b);
+    });
+  }
+
+  /* ---------- page-level ---------- */
+  function renderDetail(){
+    var p=product(state.product); if(!p){ return; }
+    $('d-name').textContent=p.name;
+    $('d-sub').textContent='HTS '+p.lines.map(function(l){ return l.hts; }).join(' + ')+'  ·  '+P('ytd').label+' against '+P('prev').label;
+    renderCost(p); renderShare(p); renderStats(p); renderForms(p);
+    var note=$('d-note'); clear(note); note.appendChild(el('b',null,'Reading this. ')); note.appendChild(d.createTextNode(p.note||''));
+    renderCalcControls(p); renderCalc();
+  }
+  function renderAll(){
+    [].forEach.call(d.querySelectorAll('.unit button'),function(b){ b.setAttribute('aria-pressed',b.getAttribute('data-unit')===state.unit?'true':'false'); });
+    var bt=$('board-title'); clear(bt); bt.appendChild(flag(FOCUS)); bt.appendChild(d.createTextNode('From '+DATA.origins[FOCUS]+', landed at a US port'));
+    $('board-cap').textContent='Average per '+state.unit+' in '+P('ytd').label+', against '+P('prev').label+': product, freight, insurance and duty. Select a product for the detail.';
+    renderTiles(); renderDetail(); renderTable();
+  }
+  function selectProduct(id,byUser){
+    if(!product(id)){ return; }
+    state.product=id;
+    [].forEach.call(d.querySelectorAll('.tile'),function(t){ t.setAttribute('aria-pressed',t.getAttribute('data-product')===id?'true':'false'); });
+    renderDetail();
+    if(byUser){
+      track('brief_product_'+id);
+      try{ w.history.replaceState(null,'','#'+id); }catch(e){}
+      var card=$('d-card'), r=card.getBoundingClientRect();
+      if(r.top>(w.innerHeight||0)*0.72){ try{ card.scrollIntoView({behavior:'smooth',block:'start'}); }catch(e2){ card.scrollIntoView(); } }
+    }
+  }
+  function setUnit(u){
+    if(u===state.unit){ return; }
+    state.unit=u; state.vol=volFor(u); state.price=priceFor(u);
+    $('calc-vol').value=state.vol>0?state.vol.toLocaleString('en-US'):'';
+    $('calc-price').value=state.price>0?state.price.toFixed(2):'';
+    try{ w.localStorage.setItem('sf_unit',u); }catch(e){}
+    renderAll(); track('brief_unit_'+u);
+  }
+
+  function init(data){
+    DATA=data; FOCUS=data.meta.focusOrigin||'EG'; state.origin=FOCUS;
+    $('m-through').textContent=P('latest').label;
+    $('m-updated').textContent=niceDate(data.meta.updated);
+    $('mt-source').textContent=data.meta.source+'. '+data.meta.basis+'. Accessed '+niceDate(data.meta.accessed)+'.';
+    $('mt-compare').textContent=P('ytd').label+' is compared with the full-year '+P('prev').label+' average.';
+    var codes=$('mt-codes'); clear(codes);
+    data.products.forEach(function(p){ p.lines.forEach(function(l){ codes.appendChild(el('li',null,'HTS '+l.hts+': '+p.name+(p.lines.length>1?' ('+l.label.toLowerCase()+')':''))); }); });
+    var h=(w.location.hash||'').slice(1);
+    state.product=product(h)?h:data.products[0].id;
+    $('d-card').hidden=false;
+    renderAll();
+
+    [].forEach.call(d.querySelectorAll('.unit button'),function(b){ b.addEventListener('click',function(){ setUnit(b.getAttribute('data-unit')); }); });
+    $('calc-vol').value=state.vol>0?state.vol.toLocaleString('en-US'):'';
+    $('calc-vol').addEventListener('input',function(){ var n=parseNum(this.value); state.vol=n&&n>0?n:0; volIn={unit:state.unit,value:state.vol}; renderCalc(); calcUsed(); });
+    $('calc-vol').addEventListener('blur',function(){ if(state.vol>0){ this.value=state.vol.toLocaleString('en-US'); } });
+    $('calc-price').addEventListener('input',function(){ var n=parseNum(this.value); state.price=n&&n>0?n:null; priceIn=state.price?{unit:state.unit,value:state.price}:null; renderCalc(); calcUsed(); });
+    $('quote-btn').addEventListener('click',function(){ track('brief_cta_quote'); });
+    $('cta-form').addEventListener('click',function(){ track('brief_cta_form'); });
+    $('cta-phone').addEventListener('click',function(){ track('brief_cta_phone'); });
+    $('cta-email').addEventListener('click',function(){ track('brief_cta_email'); });
+    $('acc-data').addEventListener('toggle',function(){ if(this.open){ track('brief_open_numbers'); } });
+    $('acc-method').addEventListener('toggle',function(){ if(this.open){ track('brief_open_method'); } });
+    w.addEventListener('hashchange',function(){ var id=(w.location.hash||'').slice(1); if(product(id)&&id!==state.product){ selectProduct(id,false); } });
+    var rt; w.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(function(){ fitLabels(d); },120); });
+    if(d.fonts&&d.fonts.ready){ d.fonts.ready.then(function(){ fitLabels(d); }); }
+  }
+
+  /* copy button */
+  [].forEach.call(d.querySelectorAll('.copy[data-copy]'),function(b){
+    b.addEventListener('click',function(){
+      var orig=b.textContent, t=b.getAttribute('data-copy');
+      function done(ok){ b.textContent=ok?'Copied':'Select & copy'; setTimeout(function(){ b.textContent=orig; },1800); }
+      function fallback(){
+        try{ var ta=d.createElement('textarea'); ta.value=t; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.opacity='0'; d.body.appendChild(ta); ta.select(); var r=d.execCommand&&d.execCommand('copy'); d.body.removeChild(ta); done(!!r); }catch(e){ done(false); }
+      }
+      if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(function(){ done(true); },fallback); } else { fallback(); }
+      track('brief_copy_email');
+    });
+  });
+
+  w.fetch('data.json',{cache:'no-cache'})
+    .then(function(r){ if(!r.ok){ throw new Error('HTTP '+r.status); } return r.json(); })
+    .then(init)
+    .catch(function(){ $('load-err').hidden=false; });
+})();
+</script>
+
+</body>
+</html>
