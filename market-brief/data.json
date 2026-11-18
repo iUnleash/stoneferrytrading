@@ -1,0 +1,484 @@
+{
+  "meta": {
+    "updated": "2026-11-18",
+    "accessed": "2026-11-16",
+    "source": "U.S. Census Bureau, USA Trade Online",
+    "sourceUrl": "https://usatrade.census.gov/",
+    "basis": "General imports, all U.S. customs districts",
+    "focusOrigin": "EG",
+    "minShare": 0.02,
+    "periods": {
+      "prev": {
+        "label": "2025",
+        "months": 12
+      },
+      "ytd": {
+        "label": "Jan–Sep 2026",
+        "months": 9
+      },
+      "latest": {
+        "label": "Sep 2026",
+        "months": 1
+      }
+    }
+  },
+  "origins": {
+    "EG": "Egypt",
+    "IN": "India",
+    "TR": "Turkey",
+    "WORLD": "All origins"
+  },
+  "products": [
+    {
+      "id": "thyme",
+      "name": "Thyme",
+      "note": "Two tariff codes combined. The unprocessed code also covers bay leaves, a major Turkish export, so Turkey is not a like-for-like thyme comparison.",
+      "originNotes": {
+        "TR": "incl. bay leaves"
+      },
+      "lines": [
+        {
+          "hts": "0910.99.0500",
+          "label": "Unprocessed (code also covers bay leaves)",
+          "data": {
+            "prev": {
+              "EG": {
+                "kg": 1660512,
+                "value": 4820089,
+                "cif": 5100762,
+                "duty": 334510
+              },
+              "IN": {
+                "kg": 5821,
+                "value": 29100,
+                "cif": 33275,
+                "duty": 2018
+              },
+              "TR": {
+                "kg": 1545824,
+                "value": 8020258,
+                "cif": 8368537,
+                "duty": 175908
+              },
+              "WORLD": {
+                "kg": 4041897,
+                "value": 16758355,
+                "cif": 17829604,
+                "duty": 772552
+              }
+            },
+            "ytd": {
+              "EG": {
+                "kg": 1262166,
+                "value": 4258296,
+                "cif": 4561465,
+                "duty": 434544
+              },
+              "IN": {
+                "kg": 49,
+                "value": 5124,
+                "cif": 6611,
+                "duty": 513
+              },
+              "TR": {
+                "kg": 895004,
+                "value": 3832852,
+                "cif": 4018279,
+                "duty": 206239
+              },
+              "WORLD": {
+                "kg": 2965401,
+                "value": 11870347,
+                "cif": 12864131,
+                "duty": 998237
+              }
+            },
+            "latest": {
+              "EG": {
+                "kg": 240125,
+                "value": 907910,
+                "cif": 987432,
+                "duty": 113492
+              },
+              "IN": {
+                "kg": 0,
+                "value": 0,
+                "cif": 0,
+                "duty": 0
+              },
+              "TR": {
+                "kg": 124117,
+                "value": 448437,
+                "cif": 476025,
+                "duty": 22235
+              },
+              "WORLD": {
+                "kg": 414095,
+                "value": 1624048,
+                "cif": 1775470,
+                "duty": 163649
+              }
+            }
+          }
+        },
+        {
+          "hts": "0910.99.0600",
+          "label": "Processed",
+          "data": {
+            "prev": {
+              "EG": {
+                "kg": 541806,
+                "value": 1725803,
+                "cif": 1901716,
+                "duty": 194472
+              },
+              "IN": {
+                "kg": 4662,
+                "value": 42576,
+                "cif": 45003,
+                "duty": 8424
+              },
+              "TR": {
+                "kg": 20210,
+                "value": 120700,
+                "cif": 123181,
+                "duty": 15893
+              },
+              "WORLD": {
+                "kg": 1379176,
+                "value": 6790144,
+                "cif": 7349069,
+                "duty": 460020
+              }
+            },
+            "ytd": {
+              "EG": {
+                "kg": 625425,
+                "value": 2199391,
+                "cif": 2399426,
+                "duty": 275351
+              },
+              "IN": {
+                "kg": 4238,
+                "value": 28799,
+                "cif": 30755,
+                "duty": 4262
+              },
+              "TR": {
+                "kg": 9903,
+                "value": 58103,
+                "cif": 61585,
+                "duty": 9345
+              },
+              "WORLD": {
+                "kg": 1200919,
+                "value": 5829891,
+                "cif": 6326225,
+                "duty": 574320
+              }
+            },
+            "latest": {
+              "EG": {
+                "kg": 96947,
+                "value": 298678,
+                "cif": 321479,
+                "duty": 34638
+              },
+              "IN": {
+                "kg": 864,
+                "value": 6912,
+                "cif": 7620,
+                "duty": 1023
+              },
+              "TR": {
+                "kg": 586,
+                "value": 3600,
+                "cif": 3601,
+                "duty": 623
+              },
+              "WORLD": {
+                "kg": 189080,
+                "value": 793764,
+                "cif": 882323,
+                "duty": 63989
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "seeds",
+      "name": "Anise, fennel & caraway",
+      "note": "One tariff code covers anise, fennel, caraway, star anise and juniper. Origins ship different mixes, so compare prices with care.",
+      "lines": [
+        {
+          "hts": "0909.61.0000",
+          "label": "Whole seed",
+          "data": {
+            "prev": {
+              "EG": {
+                "kg": 3241400,
+                "value": 7174408,
+                "cif": 7609457,
+                "duty": 424033
+              },
+              "IN": {
+                "kg": 1990784,
+                "value": 6540618,
+                "cif": 6826814,
+                "duty": 776937
+              },
+              "TR": {
+                "kg": 480995,
+                "value": 1947394,
+                "cif": 2021317,
+                "duty": 94631
+              },
+              "WORLD": {
+                "kg": 8900495,
+                "value": 29051104,
+                "cif": 30463304,
+                "duty": 2199987
+              }
+            },
+            "ytd": {
+              "EG": {
+                "kg": 2007158,
+                "value": 4700307,
+                "cif": 4992368,
+                "duty": 3968
+              },
+              "IN": {
+                "kg": 1544522,
+                "value": 5107760,
+                "cif": 5362327,
+                "duty": 19354
+              },
+              "TR": {
+                "kg": 331137,
+                "value": 1507010,
+                "cif": 1556560,
+                "duty": 992
+              },
+              "WORLD": {
+                "kg": 5802870,
+                "value": 18716739,
+                "cif": 19710663,
+                "duty": 173258
+              }
+            },
+            "latest": {
+              "EG": {
+                "kg": 187734,
+                "value": 459808,
+                "cif": 494164,
+                "duty": 383
+              },
+              "IN": {
+                "kg": 160082,
+                "value": 542751,
+                "cif": 581179,
+                "duty": 3062
+              },
+              "TR": {
+                "kg": 35693,
+                "value": 168982,
+                "cif": 177692,
+                "duty": 0
+              },
+              "WORLD": {
+                "kg": 546747,
+                "value": 1894004,
+                "cif": 2024199,
+                "duty": 16198
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "dill",
+      "name": "Dill",
+      "note": "Dill weed and dill seed share one tariff code. Seed is cheaper than weed, so an origin's average depends on its mix.",
+      "lines": [
+        {
+          "hts": "0910.99.5000",
+          "label": "Weed and seed",
+          "data": {
+            "prev": {
+              "EG": {
+                "kg": 283519,
+                "value": 1345309,
+                "cif": 1432412,
+                "duty": 42640
+              },
+              "IN": {
+                "kg": 512529,
+                "value": 1053558,
+                "cif": 1134798,
+                "duty": 108599
+              },
+              "TR": {
+                "kg": 10760,
+                "value": 106479,
+                "cif": 113556,
+                "duty": 10445
+              },
+              "WORLD": {
+                "kg": 1581417,
+                "value": 6210245,
+                "cif": 6501573,
+                "duty": 297224
+              }
+            },
+            "ytd": {
+              "EG": {
+                "kg": 240333,
+                "value": 998369,
+                "cif": 1046433,
+                "duty": 9274
+              },
+              "IN": {
+                "kg": 324042,
+                "value": 592571,
+                "cif": 636892,
+                "duty": 19859
+              },
+              "TR": {
+                "kg": 9820,
+                "value": 118062,
+                "cif": 123674,
+                "duty": 0
+              },
+              "WORLD": {
+                "kg": 1088293,
+                "value": 4488533,
+                "cif": 4665106,
+                "duty": 38103
+              }
+            },
+            "latest": {
+              "EG": {
+                "kg": 68409,
+                "value": 369885,
+                "cif": 384466,
+                "duty": 8144
+              },
+              "IN": {
+                "kg": 20140,
+                "value": 36074,
+                "cif": 42982,
+                "duty": 0
+              },
+              "TR": {
+                "kg": 0,
+                "value": 0,
+                "cif": 0,
+                "duty": 0
+              },
+              "WORLD": {
+                "kg": 140808,
+                "value": 727302,
+                "cif": 756333,
+                "duty": 12975
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "coriander",
+      "name": "Coriander seed",
+      "note": "Whole seed only (not crushed or ground).",
+      "lines": [
+        {
+          "hts": "0909.21.0000",
+          "label": "Whole seed",
+          "data": {
+            "prev": {
+              "EG": {
+                "kg": 254913,
+                "value": 578911,
+                "cif": 636534,
+                "duty": 32930
+              },
+              "IN": {
+                "kg": 1559678,
+                "value": 3023805,
+                "cif": 3218940,
+                "duty": 283544
+              },
+              "TR": {
+                "kg": 41455,
+                "value": 51251,
+                "cif": 54937,
+                "duty": 0
+              },
+              "WORLD": {
+                "kg": 3920104,
+                "value": 7143191,
+                "cif": 7467749,
+                "duty": 375375
+              }
+            },
+            "ytd": {
+              "EG": {
+                "kg": 135091,
+                "value": 272789,
+                "cif": 298226,
+                "duty": 775
+              },
+              "IN": {
+                "kg": 1264911,
+                "value": 2620983,
+                "cif": 2797116,
+                "duty": 17582
+              },
+              "TR": {
+                "kg": 3222,
+                "value": 18294,
+                "cif": 18609,
+                "duty": 0
+              },
+              "WORLD": {
+                "kg": 3351979,
+                "value": 5969969,
+                "cif": 6227452,
+                "duty": 22783
+              }
+            },
+            "latest": {
+              "EG": {
+                "kg": 62676,
+                "value": 124633,
+                "cif": 135954,
+                "duty": 450
+              },
+              "IN": {
+                "kg": 99421,
+                "value": 227313,
+                "cif": 244310,
+                "duty": 2629
+              },
+              "TR": {
+                "kg": 0,
+                "value": 0,
+                "cif": 0,
+                "duty": 0
+              },
+              "WORLD": {
+                "kg": 335331,
+                "value": 578950,
+                "cif": 612623,
+                "duty": 3259
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

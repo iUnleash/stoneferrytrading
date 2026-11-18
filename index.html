@@ -16,7 +16,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Stoneferry Trading LLC","url":"https://stoneferrytrading.com/","email":"omar@stoneferrytrading.com","telephone":"+1-703-596-2508","address":{"@type":"PostalAddress","streetAddress":"11166 Fairfax Blvd, Suite 500 #1301","addressLocality":"Fairfax","addressRegion":"VA","postalCode":"22030","addressCountry":"US"}}
+{"@context":"https://schema.org","@type":"Organization","name":"Stoneferry Trading LLC","url":"https://stoneferrytrading.com/","email":"omar@stoneferrytrading.com","telephone":"+1-703-996-9726","address":{"@type":"PostalAddress","streetAddress":"11166 Fairfax Blvd, Suite 500 #1301","addressLocality":"Fairfax","addressRegion":"VA","postalCode":"22030","addressCountry":"US"}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,7 +85,7 @@ p{margin:0}
 .menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:16px;height:2px;background:currentColor}
 .menu-btn span::before{top:-5px}.menu-btn span::after{top:5px}
 .menu-panel{display:none}
-@media (max-width:860px){
+@media (max-width:920px){
   .nav-links,.nav-right .btn{display:none}
   .menu-btn{display:inline-flex}
   .menu-panel{display:block;position:absolute;left:0;right:0;top:100%;background:var(--paper);color:var(--ink);box-shadow:0 12px 30px rgba(18,26,38,.12);border-top:1px solid var(--line);transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .25s var(--ease),transform .25s var(--ease)}
@@ -300,11 +300,12 @@ textarea.field{min-height:110px;resize:vertical}
         <li><a href="#process">Process</a></li>
         <li><a href="#quality">Quality</a></li>
         <li><a href="#company">Company</a></li>
+        <li><a href="/market-brief/" data-track="nav_market_brief">Market brief</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="nav-right">
-      <a class="btn btn-ghost" href="#contact">Request samples</a>
+      <a class="btn btn-ghost" href="#contact" data-track="nav_request_samples">Request samples</a>
       <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-panel" aria-label="Open menu"><span></span></button>
     </div>
     <div class="menu-panel" id="menu-panel">
@@ -313,9 +314,10 @@ textarea.field{min-height:110px;resize:vertical}
         <li><a href="#process">Process</a></li>
         <li><a href="#quality">Quality</a></li>
         <li><a href="#company">Company</a></li>
+        <li><a href="/market-brief/" data-track="nav_market_brief">Market brief</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a class="btn btn-primary" href="#contact">Request samples</a>
+      <a class="btn btn-primary" href="#contact" data-track="nav_request_samples">Request samples</a>
     </div>
   </div>
 </header>
@@ -331,8 +333,8 @@ textarea.field{min-height:110px;resize:vertical}
     <h1><span class="l"><span>Tested at origin.</span></span><span class="l"><span>Cleared for the US.</span></span></h1>
     <p class="lede fade fade-2">We test every lot before it ships and handle FDA import compliance, so you receive clean, documented herbs and seeds, by the pallet or the container.</p>
     <div class="hero-cta fade fade-3">
-      <a class="btn btn-primary" href="#contact">Request a sample <span class="arr">&rarr;</span></a>
-      <a class="btn btn-ghost" href="#products">View the range</a>
+      <a class="btn btn-primary" href="#contact" data-track="hero_request_sample">Request a sample <span class="arr">&rarr;</span></a>
+      <a class="btn btn-ghost" href="#products" data-track="hero_view_range">View the range</a>
     </div>
     <div class="hero-meta fade fade-4">
       <div>FSVP Importer of Record</div>
@@ -548,13 +550,13 @@ textarea.field{min-height:110px;resize:vertical}
         <h2>Request a sample or a quote.</h2>
         <p class="lede">Tell us the product, the form and your rough annual volume. We reply within one business day with a delivered price and a sample timeline.</p>
         <div class="ct-rows">
-          <div class="ct-row"><span class="k">Email</span><span class="v"><a href="mailto:omar@stoneferrytrading.com" id="email-link">omar@stoneferrytrading.com</a><button class="copy" type="button" data-copy="omar@stoneferrytrading.com">Copy</button></span></div>
-          <div class="ct-row"><span class="k">Phone</span><span class="v"><a href="tel:+17035962508">(703) 596-2508</a></span></div>
+          <div class="ct-row"><span class="k">Email</span><span class="v"><a href="mailto:omar@stoneferrytrading.com" id="email-link" data-track="home_email">omar@stoneferrytrading.com</a><button class="copy" type="button" data-copy="omar@stoneferrytrading.com" data-track="home_copy_email">Copy</button></span></div>
+          <div class="ct-row"><span class="k">Phone</span><span class="v"><a href="tel:+17039969726" data-track="home_phone">(703) 996-9726</a></span></div>
           <div class="ct-row"><span class="k">Address</span><span class="v">Stoneferry Trading LLC<br>11166 Fairfax Blvd, Suite 500 #1301<br>Fairfax, VA 22030, USA</span></div>
           <div class="ct-row"><span class="k">Hours</span><span class="v">Mon&ndash;Fri, 9:00&ndash;18:00 ET</span></div>
         </div>
       </div>
-      <form id="sample-form" class="reveal" style="--d:120ms" novalidate>
+      <form id="sample-form" class="reveal" style="--d:120ms" novalidate data-clarity-mask="true">
         <div class="f-grid">
           <div><label for="f-name">Name</label><input class="field" id="f-name" name="name" type="text" autocomplete="name" required></div>
           <div><label for="f-company">Company</label><input class="field" id="f-company" name="company" type="text" autocomplete="organization" required></div>
@@ -611,7 +613,9 @@ textarea.field{min-height:110px;resize:vertical}
         <li><a href="#process">Process</a></li>
         <li><a href="#quality">Quality</a></li>
         <li><a href="#company">Company</a></li>
+        <li><a href="/market-brief/" data-track="foot_market_brief">Market brief</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
       </ul>
     </div>
     <div class="foot-bottom">
@@ -620,6 +624,7 @@ textarea.field{min-height:110px;resize:vertical}
   </div>
 </footer>
 
+<script src="/assets/site-analytics.js" defer></script>
 <script>
 (function(){
   var d=document, root=d.documentElement, w=window;
@@ -720,6 +725,7 @@ textarea.field{min-height:110px;resize:vertical}
       ct.value=body;
       mail.setAttribute('href','mailto:omar@stoneferrytrading.com?subject='+encodeURIComponent('Sample request: '+co)+'&body='+encodeURIComponent(body));
       composed.classList.add('show'); toast.textContent='';
+      if(w.sfTrack){ w.sfTrack('home_quote_form'); }
       try{ composed.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'}); }catch(e2){}
     });
     d.getElementById('copy-req').addEventListener('click',function(){
