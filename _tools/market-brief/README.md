@@ -94,7 +94,7 @@ The brief reports these events:
 | Event | When |
 |---|---|
 | `brief_product_<id>` | a product tile is selected |
-| `nav_market_brief`, `foot_market_brief` | the brief is opened from the home page |
+| `nav_market_brief`, `foot_market_brief`, `hero_market_brief` | the brief is opened from the home page (menu, footer, hero button) |
 | `brief_unit_lb`, `brief_unit_kg` | the unit is switched |
 | `brief_calc_used`, `brief_calc_origin` | the calculator is used |
 | `brief_cta_quote` | "Get a delivered quote" is clicked |
